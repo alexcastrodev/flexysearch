@@ -2,7 +2,7 @@
 
 :wave: Hello, happy to see you here.
 
-You can read some <a href="https://alexcastrodev.github.io/castroclock-documentation/#/">Documentation</a>
+You can read some <a href="https://alexcastrodev.github.io/flexysearch">Documentation</a>
 
 # Why flexysearch
 
@@ -39,84 +39,6 @@ import Flexysearch from 'flexysearch';
 ## Tests
 
 All calls and exceptions are covered by Jest
-
-## Documentation
-
-## Search Operator
-
-### Operator AND
-
-This method returns array of search results.
-
-Exemple:
-
-```javascript
-new Flexysearch(collection).search([
-    {
-        field: 'title'
-        term: 'Star wars';
-        role: RuleStringOptions.contains;
-        type: 'string';
-        operator: RuleOperator.AND
-    }
-]);
-```
-
-### Operator OR
-
-This method returns array of search results.
-
-Exemple:
-
-```javascript
-new Flexysearch(collection).search([
-    {
-        field: 'title'
-        term: 'Star wars';
-        role: RuleStringOptions.contains;
-        type: 'string';
-        operator: RuleOperator.AND
-    },
-    {
-        field: 'title'
-        term: 'Fast and Furious';
-        role: RuleStringOptions.contains;
-        type: 'string';
-        operator: RuleOperator.OR
-    }
-]);
-```
-
-### Search String
-
-- We current have the following roles:
-
-```javascript
-// find text using regexp case insensitive global
-RuleStringOptions.contains;
-```
-
-```javascript
-// Find text with same exact match - case sensitive
-RuleStringOptions.equals;
-```
-
-### Search Numbers
-
-- We current have the following roles:
-
-```javascript
-/**
- * Find a number using regexp case insensitive global
- * It convert term and object field to string
- */
-RuleNumberOptions.contains;
-```
-
-```javascript
-// Find text with same exact match - case sensitive
-RuleNumberOptions.equals;
-```
 
 ## How to contribute
 
