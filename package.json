@@ -36,7 +36,7 @@
     "test": "jest",
     "build": "rimraf dist && rollup -c rollup.config.js",
     "publish:dev": "npm run build && npm publish --registry http://localhost:4873",
-    "publish:production": "npm run build && npm publish",
+    "publish:production": "npm run build && npm publish --registry https://registry.npmjs.org/",
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "prettier": "prettier --config .prettierrc \"src/**/*.{ts,tsx}\" --write"
