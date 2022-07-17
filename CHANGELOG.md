@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2022-07-17
+
+- Added Not contains (https://github.com/AlexcastroDev/flexysearch/issues/7)
+
 ## [0.1.1] - 2022-07-11
 
 - [Docs] Update docs on NPM

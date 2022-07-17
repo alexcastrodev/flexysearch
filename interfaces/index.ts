@@ -5,11 +5,13 @@ export type IRuleType = 'string' | 'number';
 
 export enum RuleStringOptions {
   contains = 'contains',
+  notContains = 'not_contains',
   equals = 'equals'
 }
 
 export enum RuleNumberOptions {
   contains = 'contains',
+  notContains = 'not_contains',
   equals = 'equals'
 }
 
