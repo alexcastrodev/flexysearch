@@ -13,14 +13,25 @@ export class StringProcessor {
     return new RegExp(value, 'gi');
   }
 
+  private checkContains(valueToBeCompared: string) {
+    const regexpMatches = (
+      String(valueToBeCompared).match(this.getRegexValue(String(this.term))) || []
+    ).length;
+
+    if (this.role === RuleStringOptions.notContains) {
+      return regexpMatches === 0;
+    }
+
+    return regexpMatches > 0;
+  }
+
   compareWith(valueToBeCompared: string) {
     switch (this.role) {
       case RuleStringOptions.equals:
         return String(valueToBeCompared) === this.term;
       case RuleStringOptions.contains:
-        return (
-          (String(valueToBeCompared).match(this.getRegexValue(String(this.term))) || []).length > 0
-        );
+      case RuleStringOptions.notContains:
+        return this.checkContains(valueToBeCompared);
       default:
         throw new Error('[flexysearch]: Invalid role in String');
     }
