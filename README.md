@@ -6,7 +6,7 @@ You can read some <a href="https://alexcastrodev.github.io/flexysearch">Document
 
 # Support and Community
 
-<a href="https://discord.gg/t2cEDEXSGq>Discord</a>
+<a href="https://discord.gg/t2cEDEXSGq">Discord</a>
 
 # Why flexysearch
 
