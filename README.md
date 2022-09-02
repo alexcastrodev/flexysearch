@@ -4,6 +4,10 @@
 
 You can read some <a href="https://alexcastrodev.github.io/flexysearch">Documentation</a>
 
+# Support and Community
+
+<a href="https://discord.gg/t2cEDEXSGq>Discord</a>
+
 # Why flexysearch
 
 I tried to find a simple solution for table searcher, including Strings, numbers and dates. Sadly, i did not found a solution for that.
