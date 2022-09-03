@@ -49,7 +49,8 @@ class SearchEngine {
     switch (queryCurrent.type) {
       case 'string':
         return new StringProcessor(queryCurrent.term, queryCurrent.role).compareWith(
-          data[queryCurrent.field]
+          data[queryCurrent.field],
+          queryCurrent.caseSensitive || false
         );
       case 'number':
         return new NumberProcessor(queryCurrent.term, queryCurrent.role).compareWith(

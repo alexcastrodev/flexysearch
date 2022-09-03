@@ -1,6 +1,10 @@
 import SearchEngine from '..';
 import { RuleOperator, RuleStringOptions } from '../../interfaces';
 import collection from '../../__mocks__/movies.json';
+import expectedNotContains from './__mocks__/expectedNotContains.json';
+import expectedEquals from './__mocks__/expectedEquals.json';
+import expectedEmpty from './__mocks__/expectedEmpty.json';
+import itemsCollectionMock from '../../__mocks__/items.json';
 
 describe('Should match strings', () => {
   it('[String]: Should cause exception', () => {
@@ -77,47 +81,30 @@ describe('Should match strings', () => {
       }
     ]);
 
-    expect(results).toStrictEqual([
-      {
-        id: 2,
-        title: 'Film 2',
-        year: 2015
-      },
-      {
-        id: 3,
-        title: 'Film 3',
-        year: 2014
-      },
-      {
-        id: 4,
-        title: 'Film 4',
-        year: 2014
-      },
-      {
-        id: 5,
-        title: 'Film 5',
-        year: 2001
-      },
-      {
-        id: 6,
-        title: 'Film 6',
-        year: 2000
-      },
-      {
-        id: 7,
-        title: 'Film 7',
-        year: 2009
-      },
-      {
-        id: 8,
-        title: 'Film 8',
-        year: 2015
-      },
-      {
-        id: 9,
-        title: 'Film 9',
-        year: 2020
-      }
-    ]);
+    expect(results).toStrictEqual(expectedNotContains);
+  });
+  it('[String]: Equals', () => {
+    // const results_caseSentive = new SearchEngine(collection).search([
+    //   {
+    //     field: 'title',
+    //     role: RuleStringOptions.equals,
+    //     term: 'film 1',
+    //     type: 'string',
+    //     operator: RuleOperator.AND
+    //   }
+    // ]);
+    // expect(results_caseSentive).toHaveLength(0);
+    // const results_caseInsentive = new SearchEngine(collection).search([
+    //   {
+    //     field: 'title',
+    //     role: RuleStringOptions.equals,
+    //     term: 'film 1',
+    //     type: 'string',
+    //     operator: RuleOperator.AND,
+    //     caseSensitive: false
+    //   }
+    // ]);
+    // expect(results_caseInsentive).toHaveLength(1);
+    // expect(results_caseInsentive).toStrictEqual(expectedEquals);
   });
 });

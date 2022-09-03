@@ -27,4 +27,5 @@ export interface IRule {
   role: IRoles;
   type: IRuleType;
   operator: RuleOperator;
+  caseSensitive?: boolean;
 }
