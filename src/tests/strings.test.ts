@@ -1,6 +1,8 @@
 import SearchEngine from '..';
 import { RuleOperator, RuleStringOptions } from '../../interfaces';
 import collection from '../../__mocks__/movies.json';
+import expectedNotContains from './__mocks__/expectedNotContains.json';
+import expectedEquals from './__mocks__/expectedEquals.json';
 
 describe('Should match strings', () => {
   it('[String]: Should cause exception', () => {
@@ -39,10 +41,11 @@ describe('Should match strings', () => {
     const results2 = new SearchEngine(collection).search([
       {
         field: 'title',
-        term: 'film 3',
+        term: 'Film 3',
         role: RuleStringOptions.contains,
         type: 'string',
-        operator: RuleOperator.AND
+        operator: RuleOperator.AND,
+        caseSensitive: true
       },
       {
         field: 'year',
@@ -77,47 +80,43 @@ describe('Should match strings', () => {
       }
     ]);
 
-    expect(results).toStrictEqual([
+    expect(results).toStrictEqual(expectedNotContains);
+  });
+  it('[String]: Equals', () => {
+    const resultsCaseInsentive = new SearchEngine(collection).search([
       {
-        id: 2,
-        title: 'Film 2',
-        year: 2015
-      },
-      {
-        id: 3,
-        title: 'Film 3',
-        year: 2014
-      },
-      {
-        id: 4,
-        title: 'Film 4',
-        year: 2014
-      },
-      {
-        id: 5,
-        title: 'Film 5',
-        year: 2001
-      },
-      {
-        id: 6,
-        title: 'Film 6',
-        year: 2000
-      },
-      {
-        id: 7,
-        title: 'Film 7',
-        year: 2009
-      },
-      {
-        id: 8,
-        title: 'Film 8',
-        year: 2015
-      },
-      {
-        id: 9,
-        title: 'Film 9',
-        year: 2020
+        field: 'title',
+        role: RuleStringOptions.equals,
+        term: 'fiLM 1',
+        type: 'string',
+        operator: RuleOperator.AND
       }
     ]);
+
+    expect(resultsCaseInsentive.length).toBe(1);
+
+    const results_caseSentive = new SearchEngine(collection).search([
+      {
+        field: 'title',
+        role: RuleStringOptions.equals,
+        term: 'Film 1',
+        type: 'string',
+        operator: RuleOperator.AND,
+        caseSensitive: true
+      }
+    ]);
+    const resultsCaseSentiveFailed = new SearchEngine(collection).search([
+      {
+        field: 'title',
+        role: RuleStringOptions.equals,
+        term: 'film 1',
+        type: 'string',
+        operator: RuleOperator.AND,
+        caseSensitive: true
+      }
+    ]);
+    expect(results_caseSentive.length).toBe(1);
+    expect(resultsCaseSentiveFailed.length).toBe(0);
+    expect(results_caseSentive).toStrictEqual(expectedEquals);
   });
 });
