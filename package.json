@@ -34,6 +34,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:ci": "npm run lint && jest",
     "build": "rimraf dist && rollup -c rollup.config.js",
     "publish:dev": "npm run build && npm publish --registry http://localhost:4873",
     "publish:production": "npm run build && npm publish --registry https://registry.npmjs.org/",
