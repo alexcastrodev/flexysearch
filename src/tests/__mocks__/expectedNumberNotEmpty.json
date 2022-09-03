@@ -58,15 +58,5 @@
     "id": 12,
     "title": "Film 12",
     "year": 1990
-  },
-  {
-    "id": 13,
-    "title": "Film Null",
-    "year": null
-  },
-  {
-    "id": 14,
-    "title": "Film empty",
-    "year": ""
   }
 ]

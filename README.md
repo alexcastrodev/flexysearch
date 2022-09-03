@@ -2,7 +2,7 @@
 
 :wave: Hello, happy to see you here.
 
-You can read some <a href="https://alexcastrodev.github.io/flexysearch">Documentation</a>
+You can read some <a href="https://alexcastrodev.notion.site/Flexysearch-26f246418e964e708cf009b5d5e97be2">Documentation</a>
 
 # Support and Community
 

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 13,
+    "title": "Film Null",
+    "year": null
+  },
+  {
+    "id": 14,
+    "title": "Film empty",
+    "year": ""
+  }
+]

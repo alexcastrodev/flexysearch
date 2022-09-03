@@ -6,13 +6,17 @@ export type IRuleType = 'string' | 'number';
 export enum RuleStringOptions {
   contains = 'contains',
   notContains = 'not_contains',
-  equals = 'equals'
+  equals = 'equals',
+  isEmpty = 'is_empty',
+  isNotEmpty = 'is_not_empty'
 }
 
 export enum RuleNumberOptions {
   contains = 'contains',
   notContains = 'not_contains',
-  equals = 'equals'
+  equals = 'equals',
+  isEmpty = 'is_empty',
+  isNotEmpty = 'is_not_empty'
 }
 
 export enum RuleOperator {
@@ -23,8 +27,9 @@ export enum RuleOperator {
 export type IRoles = RuleStringOptions | RuleNumberOptions;
 export interface IRule {
   field: string;
-  term: any;
+  term?: any;
   role: IRoles;
   type: IRuleType;
   operator: RuleOperator;
+  caseSensitive?: boolean;
 }
