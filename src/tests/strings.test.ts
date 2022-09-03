@@ -1,8 +1,10 @@
 import SearchEngine from '..';
 import { RuleOperator, RuleStringOptions } from '../../interfaces';
 import collection from '../../__mocks__/movies.json';
+import collectionItems from '../../__mocks__/items.json';
 import expectedNotContains from './__mocks__/expectedNotContains.json';
 import expectedEquals from './__mocks__/expectedEquals.json';
+import expectedEmpty from './__mocks__/expectedEmpty.json';
 
 describe('Should match strings', () => {
   it('[String]: Should cause exception', () => {
@@ -28,31 +30,6 @@ describe('Should match strings', () => {
         role: RuleStringOptions.contains,
         type: 'string',
         operator: RuleOperator.AND
-      },
-      {
-        field: 'year',
-        term: '2014',
-        role: RuleStringOptions.contains,
-        type: 'string',
-        operator: RuleOperator.AND
-      }
-    ]);
-
-    const results2 = new SearchEngine(collection).search([
-      {
-        field: 'title',
-        term: 'Film 3',
-        role: RuleStringOptions.contains,
-        type: 'string',
-        operator: RuleOperator.AND,
-        caseSensitive: true
-      },
-      {
-        field: 'year',
-        term: '2000',
-        role: RuleStringOptions.contains,
-        type: 'string',
-        operator: RuleOperator.OR
       }
     ]);
 
@@ -62,11 +39,6 @@ describe('Should match strings', () => {
         title: 'Film 3',
         year: 2014
       }
-    ]);
-
-    expect(results2).toStrictEqual([
-      { id: 3, title: 'Film 3', year: 2014 },
-      { id: 6, title: 'Film 6', year: 2000 }
     ]);
   });
   it('[String]: Not Contains', () => {
@@ -95,7 +67,7 @@ describe('Should match strings', () => {
 
     expect(resultsCaseInsentive.length).toBe(1);
 
-    const results_caseSentive = new SearchEngine(collection).search([
+    const results_caseSensitive = new SearchEngine(collection).search([
       {
         field: 'title',
         role: RuleStringOptions.equals,
@@ -105,7 +77,7 @@ describe('Should match strings', () => {
         caseSensitive: true
       }
     ]);
-    const resultsCaseSentiveFailed = new SearchEngine(collection).search([
+    const resultscaseSensitiveFailed = new SearchEngine(collection).search([
       {
         field: 'title',
         role: RuleStringOptions.equals,
@@ -115,8 +87,48 @@ describe('Should match strings', () => {
         caseSensitive: true
       }
     ]);
-    expect(results_caseSentive.length).toBe(1);
-    expect(resultsCaseSentiveFailed.length).toBe(0);
-    expect(results_caseSentive).toStrictEqual(expectedEquals);
+
+    expect(results_caseSensitive.length).toBe(1);
+    expect(resultscaseSensitiveFailed.length).toBe(0);
+    expect(results_caseSensitive).toStrictEqual(expectedEquals);
+  });
+  it('[String]: Empty', () => {
+    const results = new SearchEngine(collectionItems).search([
+      {
+        field: 'colors',
+        role: RuleStringOptions.isEmpty,
+        type: 'string',
+        operator: RuleOperator.AND
+      }
+    ]);
+
+    expect(results.length).toBe(5);
+    expect(results).toStrictEqual(expectedEmpty);
+  });
+  it('[String]: Is not empty', () => {
+    const results = new SearchEngine(collectionItems).search([
+      {
+        field: 'colors',
+        role: RuleStringOptions.isNotEmpty,
+        type: 'string',
+        operator: RuleOperator.AND
+      }
+    ]);
+
+    expect(results.length).toBe(2);
+  });
+  it('[String]: search case sensitive', () => {
+    const results = new SearchEngine(collectionItems).search([
+      {
+        field: 'colors',
+        role: RuleStringOptions.contains,
+        term: 'Blue',
+        type: 'string',
+        operator: RuleOperator.AND,
+        caseSensitive: true
+      }
+    ]);
+
+    expect(results.length).toBe(1);
   });
 });

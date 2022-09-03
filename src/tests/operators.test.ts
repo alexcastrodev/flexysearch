@@ -1,3 +1,4 @@
+import { RuleNumberOptions } from './../../interfaces/index';
 import SearchEngine from '..';
 import { IRuleType, RuleOperator, RuleStringOptions } from '../../interfaces';
 import collection from '../../__mocks__/movies.json';
@@ -28,9 +29,9 @@ describe('Should match strings', () => {
       },
       {
         field: 'year',
-        term: '2015',
-        role: RuleStringOptions.equals,
-        type: 'string',
+        term: '2014',
+        role: RuleNumberOptions.equals,
+        type: 'number',
         operator: RuleOperator.OR
       }
     ]);
@@ -42,15 +43,14 @@ describe('Should match strings', () => {
         year: 2014
       },
       {
-        id: 2,
-        title: 'Film 2',
-        year: 2015
+        id: 3,
+        title: 'Film 3',
+        year: 2014
       },
-
       {
-        id: 8,
-        title: 'Film 8',
-        year: 2015
+        id: 4,
+        title: 'Film 4',
+        year: 2014
       }
     ]);
   });

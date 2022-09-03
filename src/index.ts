@@ -48,12 +48,12 @@ class SearchEngine {
   private someDataIsValid(queryCurrent: IRule, data: Record<string, string>) {
     switch (queryCurrent.type) {
       case 'string':
-        return new StringProcessor(queryCurrent.term, queryCurrent.role).compareWith(
+        return new StringProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
           data[queryCurrent.field],
           queryCurrent.caseSensitive || false
         );
       case 'number':
-        return new NumberProcessor(queryCurrent.term, queryCurrent.role).compareWith(
+        return new NumberProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
           data[queryCurrent.field]
         );
       default:

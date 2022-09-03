@@ -2,7 +2,7 @@ import { IRoles, RuleStringOptions } from '../../interfaces';
 
 export class StringProcessor {
   private term = '';
-  private caseSentive = false;
+  private caseSensitive = false;
   private role: IRoles;
 
   constructor(value: string, role: IRoles) {
@@ -11,7 +11,7 @@ export class StringProcessor {
   }
 
   private getRegexValue(value: string) {
-    const flags = this.caseSentive ? 'g' : 'gi';
+    const flags = this.caseSensitive ? 'g' : 'gi';
     return new RegExp(value, flags);
   }
 
@@ -28,22 +28,34 @@ export class StringProcessor {
   }
 
   private checkEquals(valueToBeCompared: string) {
-    if (!this.caseSentive) {
+    if (!this.caseSensitive) {
       return valueToBeCompared.toLowerCase() === this.term.toLowerCase();
     }
 
     return valueToBeCompared === this.term;
   }
 
-  compareWith(valueToBeCompared: string, caseSentive: boolean) {
-    this.caseSentive = caseSentive;
+  private checkisEmpty(valueToBeCompared: string) {
+    return !valueToBeCompared;
+  }
+
+  compareWith(valueToBeCompared: string, caseSensitive: boolean) {
+    this.caseSensitive = caseSensitive;
+
+    if (typeof valueToBeCompared !== 'string') {
+      return false;
+    }
 
     switch (this.role) {
       case RuleStringOptions.equals:
-        return this.checkEquals(String(valueToBeCompared));
+        return this.checkEquals(valueToBeCompared);
       case RuleStringOptions.contains:
       case RuleStringOptions.notContains:
-        return this.checkContains(String(valueToBeCompared));
+        return this.checkContains(valueToBeCompared);
+      case RuleStringOptions.isEmpty:
+        return this.checkisEmpty(valueToBeCompared);
+      case RuleStringOptions.isNotEmpty:
+        return !this.checkisEmpty(valueToBeCompared);
       default:
         throw new Error('[flexysearch]: Invalid role in String');
     }

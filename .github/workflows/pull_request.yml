@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.8.0'
+          node-version: '16.10.0'
       - name: Load Yarn cache
         uses: actions/cache@v2
         with:
@@ -32,4 +32,4 @@ jobs:
       - name: Build public packages
         run: npm run build
       - name: Run eslint and jest
-        run: npm test:ci
+        run: npm run test:ci
