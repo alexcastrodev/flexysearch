@@ -19,18 +19,19 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.76.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-typescript2": "^0.32.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^28.0.0",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
     "test": "jest",
@@ -40,6 +41,9 @@
     "publish:production": "npm run build && npm publish --registry https://registry.npmjs.org/",
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "prettier": "prettier --config .prettierrc \"src/**/*.{ts,tsx}\" --write"
+    "prettier": "prettier --config .prettierrc \"src/**/*.{ts,tsx}\" --write",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier:fix": "npm run prettier -- --write",
+    "lint-staged": "lint-staged"
   }
 }
