@@ -28,11 +28,11 @@ export class StringProcessor {
   }
 
   private checkEquals(valueToBeCompared: string) {
-    const term = this.getRegexValue(String(this.term));
-    console.log('🚀 ~ file: strings.ts ~ line 32 ~ StringProcessor ~ checkEquals ~ term', term);
-    const regexpMatches = (valueToBeCompared.match(term) || []).length;
+    if (!this.caseSentive) {
+      return valueToBeCompared.toLowerCase() === this.term.toLowerCase();
+    }
 
-    return regexpMatches > 0;
+    return valueToBeCompared === this.term;
   }
 
   compareWith(valueToBeCompared: string, caseSentive: boolean) {
