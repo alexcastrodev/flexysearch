@@ -1,14 +1,19 @@
 import { StringProcessor } from './utils/strings'
 import { IRule, RuleOperator } from '../interfaces'
 import { NumberProcessor } from './utils/number'
+import { hashCode } from './utils/hash'
 class SearchEngine {
   private shouldHave: any[] = []
   private mustHave: any[] = []
   private initialData: any[] = []
 
   constructor(collection: any[]) {
-    this.initialData = collection
-    this.mustHave = collection
+    const collectionToBeStored = collection.map((item) => ({
+      fs_uuid: hashCode(JSON.stringify(item)),
+      ...item,
+    }))
+    this.initialData = collectionToBeStored
+    this.mustHave = collectionToBeStored
   }
 
   search(queries: IRule[]) {
@@ -61,7 +66,15 @@ class SearchEngine {
   }
 
   get all() {
-    return this.mustHave.concat(this.shouldHave)
+    const data = this.mustHave.concat(this.shouldHave)
+    return (
+      data
+        .filter((char, index) => {
+          return data.indexOf(char) === index
+        })
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .map(({ fs_uuid, ...rest }) => rest)
+    )
   }
 }
 

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2022-08-03
+
+### Fixes
+
+- Remove duplicate object when using OR operator
+
+## [0.2.1] - 2022-08-03
+
+### Fixes
+
+- Fix build after CI automate release
+
 ## [0.2.0] - 2022-08-03
 
 ### Added
@@ -16,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added search by number not empty (https://github.com/AlexcastroDev/flexysearch/issues/12)
 
 - Added search by number empty (https://github.com/AlexcastroDev/flexysearch/issues/11)
-- 
+-
 - Added search by string not empty (https://github.com/AlexcastroDev/flexysearch/issues/10)
 
 - Added search by string empty (https://github.com/AlexcastroDev/flexysearch/issues/9)
