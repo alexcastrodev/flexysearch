@@ -1,6 +1,6 @@
 {
   "name": "flexysearch",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -39,6 +39,7 @@
     "build": "rimraf dist && rollup -c rollup.config.js",
     "publish:dev": "npm run build && npm publish --registry http://localhost:4873",
     "publish:production": "npm run build && npm publish --registry https://registry.npmjs.org/",
+    "publish:production:ci": "yarn build && yarn publish",
     "prepare": "husky install",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "prettier": "prettier --config .prettierrc \"src/**/*.{ts,tsx}\" --write",

@@ -43,11 +43,6 @@ describe('Should match strings', () => {
         year: 2014,
       },
       {
-        id: 3,
-        title: 'Film 3',
-        year: 2014,
-      },
-      {
         id: 4,
         title: 'Film 4',
         year: 2014,
