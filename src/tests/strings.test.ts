@@ -2,9 +2,9 @@ import SearchEngine from '..'
 import { RuleOperator, RuleStringOptions } from '../../interfaces'
 import collection from '../../__mocks__/movies.json'
 import collectionItems from '../../__mocks__/items.json'
-import expectedNotContains from './__mocks__/expectedNotContains.json'
-import expectedEquals from './__mocks__/expectedEquals.json'
-import expectedEmpty from './__mocks__/expectedEmpty.json'
+import expectedNotContains from './__mocks__/strings/expectedNotContains.json'
+import expectedEquals from './__mocks__/strings/expectedEquals.json'
+import expectedEmpty from './__mocks__/strings/expectedEmpty.json'
 
 describe('Should match strings', () => {
   it('[String]: Should cause exception', () => {
