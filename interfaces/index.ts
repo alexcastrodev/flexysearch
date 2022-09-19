@@ -1,4 +1,4 @@
-export type IRuleType = 'string' | 'number' | 'date'
+export type IRuleType = 'string' | 'number' | 'date' | 'custom'
 
 export enum RuleStringOptions {
   contains = 'contains',
@@ -32,11 +32,15 @@ export enum RuleOperator {
 }
 
 export type IRoles = RuleStringOptions | RuleNumberOptions | RuleDateOptions
+
+export type IRuleFilter<T = any> = (datum: T) => boolean
+
 export interface IRule {
-  field: string
-  term?: any
-  role: IRoles
   type: IRuleType
   operator: RuleOperator
+  field?: string
+  term?: any
+  role?: IRoles
   caseSensitive?: boolean
+  filter?: IRuleFilter
 }

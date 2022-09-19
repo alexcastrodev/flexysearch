@@ -5,7 +5,7 @@ export class StringProcessor {
   private caseSensitive = false
   private role: IRoles
 
-  constructor(value: string, role: IRoles) {
+  constructor(value: string, role?: IRoles) {
     this.term = value
     this.role = role as RuleStringOptions
   }

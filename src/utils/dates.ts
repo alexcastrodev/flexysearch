@@ -1,12 +1,12 @@
 import { RuleDateOptions } from '../../interfaces/index'
 import { IRoles } from '../../interfaces'
-import { VALIDATE_DATE_REGEXP } from './regexp'
+import { VALIDATE_DATE_REGEXP } from './helpers/regexp'
 
 export class DateProcessor {
   private term: string
   private role: IRoles
 
-  constructor(value: string, role: IRoles) {
+  constructor(value: string, role?: IRoles) {
     this.term = value
     this.role = role as RuleDateOptions
   }

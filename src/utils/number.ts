@@ -5,7 +5,7 @@ export class NumberProcessor {
   private term: number
   private role: IRoles
 
-  constructor(value: number, role: IRoles) {
+  constructor(value: number, role?: IRoles) {
     this.term = Number(value)
     this.role = role as RuleNumberOptions
   }
