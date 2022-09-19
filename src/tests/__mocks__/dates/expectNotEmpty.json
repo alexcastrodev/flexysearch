@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "first_name": "Amber",
+    "last_name": "Pockey",
+    "born_at": "2022-08-12"
+  }, {
+    "id": 2,
+    "first_name": "Marcile",
+    "last_name": "Wesson",
+    "born_at": "2021-10-23"
+  }
+]

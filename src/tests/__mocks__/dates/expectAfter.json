@@ -1,0 +1,31 @@
+[{
+  "id": 1,
+  "first_name": "Amber",
+  "last_name": "Pockey",
+  "born_at": "2022-08-12"
+}, {
+  "id": 6,
+  "first_name": "Penny",
+  "last_name": "Caslane",
+  "born_at": "2022-03-22"
+}, {
+  "id": 7,
+  "first_name": "Kris",
+  "last_name": "Royse",
+  "born_at": "2021-12-05"
+}, {
+  "id": 8,
+  "first_name": "Delinda",
+  "last_name": "Sydall",
+  "born_at": "2022-07-30"
+}, {
+  "id": 9,
+  "first_name": "Nisse",
+  "last_name": "Reeson",
+  "born_at": "2022-03-07"
+}, {
+  "id": 10,
+  "first_name": "Kincaid",
+  "last_name": "Dautry",
+  "born_at": "2021-12-27"
+}]

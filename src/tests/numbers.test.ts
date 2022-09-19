@@ -1,9 +1,9 @@
 import SearchEngine from '..'
 import { RuleNumberOptions, RuleOperator } from '../../interfaces'
 import collection from '../../__mocks__/movies.json'
-import expectedNumberNotContains from './__mocks__/expectedNumberNotContains.json'
-import expectedNumberNotEmpty from './__mocks__/expectedNumberNotEmpty.json'
-import expectedNumberEmpty from './__mocks__/expectedNumberEmpty.json'
+import expectedNumberNotContains from './__mocks__/numbers/expectedNumberNotContains.json'
+import expectedNumberNotEmpty from './__mocks__/numbers/expectedNumberNotEmpty.json'
+import expectedNumberEmpty from './__mocks__/numbers/expectedNumberEmpty.json'
 
 describe('Should match number', () => {
   it('[Number]: Should cause exception', () => {

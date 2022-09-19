@@ -2,6 +2,7 @@ import { StringProcessor } from './utils/strings'
 import { IRule, RuleOperator } from '../interfaces'
 import { NumberProcessor } from './utils/number'
 import { hashCode } from './utils/hash'
+import { DateProcessor } from './utils/dates'
 class SearchEngine {
   private shouldHave: any[] = []
   private mustHave: any[] = []
@@ -58,6 +59,10 @@ class SearchEngine {
         )
       case 'number':
         return new NumberProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
+          data[queryCurrent.field],
+        )
+      case 'date':
+        return new DateProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
           data[queryCurrent.field],
         )
       default:
