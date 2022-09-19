@@ -3,6 +3,7 @@ import { IRule, RuleOperator } from '../interfaces'
 import { NumberProcessor } from './utils/number'
 import { hashCode } from './utils/hash'
 import { DateProcessor } from './utils/dates'
+import { omit } from './utils/helpers/objects'
 class SearchEngine {
   private shouldHave: any[] = []
   private mustHave: any[] = []
@@ -17,7 +18,7 @@ class SearchEngine {
     this.mustHave = collectionToBeStored
   }
 
-  search(queries: IRule[]) {
+  public search(queries: IRule[]) {
     const query = {
       '@or': queries.filter((item) => item.operator === RuleOperator.OR),
       '@and': queries.filter((item) => item.operator === RuleOperator.AND),
@@ -51,20 +52,28 @@ class SearchEngine {
   }
 
   private someDataIsValid(queryCurrent: IRule, data: Record<string, string>) {
+    const field = queryCurrent.field || ''
     switch (queryCurrent.type) {
       case 'string':
         return new StringProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[queryCurrent.field],
+          data[field],
           queryCurrent.caseSensitive || false,
         )
       case 'number':
         return new NumberProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[queryCurrent.field],
+          data[field],
         )
       case 'date':
         return new DateProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[queryCurrent.field],
+          data[field],
         )
+      case 'custom':
+        if (queryCurrent.filter && typeof queryCurrent.filter === 'function') {
+          const datum = omit(data, ['fs_uuid'])
+
+          return queryCurrent.filter(datum)
+        }
+        throw new Error('[flexysearch]: Custom filter not valid')
       default:
         throw new Error('[flexysearch]: Processor not found')
     }
