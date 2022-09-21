@@ -39,6 +39,16 @@ export class NumberProcessor {
     switch (this.role) {
       case RuleNumberOptions.equals:
         return numberValue === this.term
+      case RuleNumberOptions.isNotEquals:
+        return numberValue !== this.term
+      case RuleNumberOptions.biggerThan:
+        return numberValue > this.term && !!valueToBeCompared
+      case RuleNumberOptions.biggerOrEquals:
+        return numberValue >= this.term && !!valueToBeCompared
+      case RuleNumberOptions.smallerThan:
+        return numberValue < this.term && !!valueToBeCompared
+      case RuleNumberOptions.smallerOrEquals:
+        return numberValue <= this.term && !!valueToBeCompared
       case RuleNumberOptions.contains:
       case RuleNumberOptions.notContains:
         return this.checkContains(valueToBeCompared)

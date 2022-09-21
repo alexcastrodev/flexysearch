@@ -115,7 +115,7 @@ describe('Should match number', () => {
       {
         field: 'year',
         role: RuleNumberOptions.isNotEquals,
-        term: '2014',
+        term: 2014,
         type: 'number',
         operator: RuleOperator.AND,
       },
@@ -128,7 +128,7 @@ describe('Should match number', () => {
       {
         field: 'year',
         role: RuleNumberOptions.biggerThan,
-        term: '2014',
+        term: 2014,
         type: 'number',
         operator: RuleOperator.AND,
       },
@@ -141,13 +141,13 @@ describe('Should match number', () => {
       {
         field: 'year',
         role: RuleNumberOptions.smallerThan,
-        term: '2014',
+        term: 2014,
         type: 'number',
         operator: RuleOperator.AND,
       },
     ])
 
-    expect(results).toStrictEqual(expectBiggerOrEquals)
+    expect(results).toStrictEqual(expectSmallerThan)
   })
 
   it('[Number]: bigger or equals', () => {
@@ -155,25 +155,25 @@ describe('Should match number', () => {
       {
         field: 'year',
         role: RuleNumberOptions.biggerOrEquals,
-        term: '2014',
+        term: 2014,
         type: 'number',
         operator: RuleOperator.AND,
       },
     ])
 
-    expect(results).toStrictEqual(expectSmallerOrEquals)
+    expect(results).toStrictEqual(expectBiggerOrEquals)
   })
   it('[Number]: smaller or equals', () => {
     const results = new SearchEngine(collection).search([
       {
         field: 'year',
         role: RuleNumberOptions.smallerOrEquals,
-        term: '2014',
+        term: 2014,
         type: 'number',
         operator: RuleOperator.AND,
       },
     ])
 
-    expect(results).toStrictEqual(expectSmallerThan)
+    expect(results).toStrictEqual(expectSmallerOrEquals)
   })
 })
