@@ -14,6 +14,11 @@ export enum RuleNumberOptions {
   equals = 'equals',
   isEmpty = 'is_empty',
   isNotEmpty = 'is_not_empty',
+  isNotEquals = 'is_not_equals',
+  biggerThan = 'bigger_than',
+  smallerThan = 'smaller_than',
+  biggerOrEquals = 'bigger_or_equals',
+  smallerOrEquals = 'smaller_or_equals',
 }
 
 export enum RuleDateOptions {

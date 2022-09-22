@@ -4,6 +4,11 @@ import collection from '../../__mocks__/movies.json'
 import expectedNumberNotContains from './__mocks__/numbers/expectedNumberNotContains.json'
 import expectedNumberNotEmpty from './__mocks__/numbers/expectedNumberNotEmpty.json'
 import expectedNumberEmpty from './__mocks__/numbers/expectedNumberEmpty.json'
+import expectDifferentFrom from './__mocks__/numbers/expectDifferentFrom.json'
+import expectBiggerThan from './__mocks__/numbers/expectBiggerThan.json'
+import expectBiggerOrEquals from './__mocks__/numbers/expectBiggerOrEquals.json'
+import expectSmallerOrEquals from './__mocks__/numbers/expectSmallerOrEquals.json'
+import expectSmallerThan from './__mocks__/numbers/expectSmallerThan.json'
 
 describe('Should match number', () => {
   it('[Number]: Should cause exception', () => {
@@ -104,5 +109,71 @@ describe('Should match number', () => {
     ])
 
     expect(results).toStrictEqual(expectedNumberNotEmpty)
+  })
+  it('[Number]: Different from', () => {
+    const results = new SearchEngine(collection).search([
+      {
+        field: 'year',
+        role: RuleNumberOptions.isNotEquals,
+        term: 2014,
+        type: 'number',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectDifferentFrom)
+  })
+  it('[Number]: bigger than', () => {
+    const results = new SearchEngine(collection).search([
+      {
+        field: 'year',
+        role: RuleNumberOptions.biggerThan,
+        term: 2014,
+        type: 'number',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectBiggerThan)
+  })
+  it('[Number]: smaller than', () => {
+    const results = new SearchEngine(collection).search([
+      {
+        field: 'year',
+        role: RuleNumberOptions.smallerThan,
+        term: 2014,
+        type: 'number',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectSmallerThan)
+  })
+
+  it('[Number]: bigger or equals', () => {
+    const results = new SearchEngine(collection).search([
+      {
+        field: 'year',
+        role: RuleNumberOptions.biggerOrEquals,
+        term: 2014,
+        type: 'number',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectBiggerOrEquals)
+  })
+  it('[Number]: smaller or equals', () => {
+    const results = new SearchEngine(collection).search([
+      {
+        field: 'year',
+        role: RuleNumberOptions.smallerOrEquals,
+        term: 2014,
+        type: 'number',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectSmallerOrEquals)
   })
 })

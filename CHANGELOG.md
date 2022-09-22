@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2022-09-22
+
+- Added number filter: Different from, bigger than, smaller than, bigger or equals and smaller or equals.
+
 ## [0.3.0] - 2022-09-19
 
 ### Added
