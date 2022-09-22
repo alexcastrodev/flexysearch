@@ -21,6 +21,8 @@ export enum RuleDateOptions {
   isNotEquals = 'is_not_equals',
   isAfter = 'after',
   isBefore = 'before',
+  isOnOrAfter = 'on_or_after',
+  isOnOrBefore = 'on_or_before',
   isBetween = 'is_between',
   empty = 'is_empty',
   isNotEmpty = 'is_not_empty',
