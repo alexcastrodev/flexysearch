@@ -92,6 +92,20 @@ describe('Should match Date', () => {
 
     expect(results).toStrictEqual(expectAfter)
   })
+  it('[Date]: Should find on or after dates on collection', () => {
+    const data = collection.slice(0, 10)
+    const results = new SearchEngine(data).search([
+      {
+        field: 'born_at',
+        term: '2021-12-05',
+        role: RuleDateOptions.isOnOrAfter,
+        type: 'date',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    expect(results).toStrictEqual(expectAfter)
+  })
   it('[Date]: Should find before dates on collection', () => {
     const data = collection.slice(0, 10)
     const results = new SearchEngine(data).search([
@@ -99,6 +113,19 @@ describe('Should match Date', () => {
         field: 'born_at',
         term: '2022-05-01',
         role: RuleDateOptions.isBefore,
+        type: 'date',
+        operator: RuleOperator.AND,
+      },
+    ])
+    expect(results).toStrictEqual(expectBefore)
+  })
+  it('[Date]: Should find on or before dates on collection', () => {
+    const data = collection.slice(0, 10)
+    const results = new SearchEngine(data).search([
+      {
+        field: 'born_at',
+        term: '2022-03-22',
+        role: RuleDateOptions.isOnOrBefore,
         type: 'date',
         operator: RuleOperator.AND,
       },

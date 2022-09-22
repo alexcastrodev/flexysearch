@@ -47,13 +47,17 @@ export class DateProcessor {
     return date1 !== date2
   }
 
-  private isAfterOrBefore(valueToBeCompared: string, isBefore = false) {
+  private isAfterOrBefore(valueToBeCompared: string, isBefore = false, includeOn = false) {
     if (!this.checkIsValid(valueToBeCompared) || !this.checkIsValid(this.term)) {
       return false
     }
 
     const date = new Date(valueToBeCompared as string).getTime()
     const dateTerm = new Date(this.term).getTime()
+
+    if (includeOn) {
+      return isBefore ? dateTerm >= date : dateTerm <= date
+    }
 
     return isBefore ? dateTerm > date : dateTerm < date
   }
@@ -89,8 +93,12 @@ export class DateProcessor {
         return this.checkisEmpty(valueToBeCompared)
       case RuleDateOptions.isAfter:
         return this.isAfterOrBefore(valueToBeCompared)
+      case RuleDateOptions.isOnOrAfter:
+        return this.isAfterOrBefore(valueToBeCompared, false, true)
       case RuleDateOptions.isBefore:
         return this.isAfterOrBefore(valueToBeCompared, true)
+      case RuleDateOptions.isOnOrBefore:
+        return this.isAfterOrBefore(valueToBeCompared, true, true)
       case RuleDateOptions.isBetween:
         return this.isBetween(valueToBeCompared)
       default:
