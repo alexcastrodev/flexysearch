@@ -39,6 +39,22 @@ export class StringProcessor {
     return !valueToBeCompared
   }
 
+  private startsWithTerm(valueToBeCompared: string) {
+    if (!this.caseSensitive) {
+      return valueToBeCompared.toLowerCase().startsWith(this.term.toLowerCase())
+    }
+
+    return valueToBeCompared.startsWith(this.term)
+  }
+
+  private endsWithTerm(valueToBeCompared: string) {
+    if (!this.caseSensitive) {
+      return valueToBeCompared.toLowerCase().endsWith(this.term.toLowerCase())
+    }
+
+    return valueToBeCompared.endsWith(this.term)
+  }
+
   compareWith(valueToBeCompared: string, caseSensitive: boolean) {
     this.caseSensitive = caseSensitive
 
@@ -56,6 +72,10 @@ export class StringProcessor {
         return this.checkisEmpty(valueToBeCompared)
       case RuleStringOptions.isNotEmpty:
         return !this.checkisEmpty(valueToBeCompared)
+      case RuleStringOptions.startsWith:
+        return this.startsWithTerm(valueToBeCompared)
+      case RuleStringOptions.endsWith:
+        return this.endsWithTerm(valueToBeCompared)
       default:
         throw new Error('[flexysearch]: Invalid role in String')
     }

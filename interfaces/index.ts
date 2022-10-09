@@ -6,6 +6,8 @@ export enum RuleStringOptions {
   equals = 'equals',
   isEmpty = 'is_empty',
   isNotEmpty = 'is_not_empty',
+  startsWith = 'starts_with',
+  endsWith = 'ends_with',
 }
 
 export enum RuleNumberOptions {
