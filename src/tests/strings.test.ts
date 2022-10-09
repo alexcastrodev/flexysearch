@@ -131,4 +131,32 @@ describe('Should match strings', () => {
 
     expect(results.length).toBe(1)
   })
+  it('[String]: search starts with', () => {
+    const results = new SearchEngine(collectionItems).search([
+      {
+        field: 'colors',
+        role: RuleStringOptions.startsWith,
+        term: 'Bl',
+        type: 'string',
+        operator: RuleOperator.AND,
+        caseSensitive: true,
+      },
+    ])
+
+    expect(results.length).toBe(1)
+  })
+  it('[String]: search ends with', () => {
+    const results = new SearchEngine(collectionItems).search([
+      {
+        field: 'colors',
+        role: RuleStringOptions.endsWith,
+        term: 'ue',
+        type: 'string',
+        operator: RuleOperator.AND,
+        caseSensitive: true,
+      },
+    ])
+
+    expect(results.length).toBe(1)
+  })
 })
