@@ -1,5 +1,7 @@
 # Greetings
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/712f2f45625d42eb900978b4db733f9e)](https://app.codacy.com/gh/AlexcastroDev/flexysearch?utm_source=github.com&utm_medium=referral&utm_content=AlexcastroDev/flexysearch&utm_campaign=Badge_Grade_Settings)
+
 :wave: Hello, happy to see you here.
 
 You can read some <a href="https://alexcastrodev.notion.site/Flexysearch-26f246418e964e708cf009b5d5e97be2">Documentation</a>
