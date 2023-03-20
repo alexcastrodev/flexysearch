@@ -1,7 +1,0 @@
-# test reports
-coverage
-/coverage/
-**/coverage/*
-
-# project files
-node_modules
