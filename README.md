@@ -1,3 +1,6 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7763543ba12e46f8860743354278f206)](https://www.codacy.com/gh/AlexcastroDev/flexysearch/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexcastroDev/flexysearch&amp;utm_campaign=Badge_Grade)
+
+
 # Greetings
 
 :wave: Hello, happy to see you here.
