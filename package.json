@@ -2,7 +2,10 @@
   "name": "flexysearch",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test:flexysearch": "nx test flexysearch",
+    "test:react": "nx test flexysearch-react"
+  },
   "private": true,
   "dependencies": {
     "react": "18.2.0",
