@@ -1,0 +1,5 @@
+export enum Kind {
+    SET_DATA_ACTION,
+    SET_FILTERED_DATA_ACTION,
+    UPDATE_GLOBAL_SEARCH_ACTION,
+}

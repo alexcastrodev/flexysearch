@@ -1,1 +1,1 @@
-export * from './lib/flexysearch-react';
+export { default as useFlexysearch } from './hooks/useFlexyseach';
