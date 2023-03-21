@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:docs": "nx start flexysearch-docs",
-    "build:docs": "nx build flexysearch-docs",
+    "build:docs": "cd apps/docs && npm run build",
     "test:flexysearch": "nx test @flexysearch/core",
     "lint:flexysearch": "nx lint @flexysearch/core",
     "build:flexysearch": "nx build @flexysearch/core",
@@ -15,12 +15,14 @@
     "build:react": "nx build flexysearch-react",
     "publish:react:dev": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry http://localhost:4873",
     "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/",
-    "test:ci": "npm run test:flexysearch && npm run test:react"
+    "test:ci": "npm run test:flexysearch && npm run test:react",
+    "deploy": "npm run build:docs && npx gh-pages -d apps/docs/build"
   },
   "private": true,
   "devDependencies": {
     "flexysearch": "^1.0.0",
     "tslib": "^2.3.0",
+    "gh-pages": "^5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@nrwl/rollup": "15.8.7",
