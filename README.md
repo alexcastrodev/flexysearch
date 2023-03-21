@@ -19,7 +19,7 @@ npm i flexysearch
 ```
 
 # Documentation
-For more detailed documentation on how to use Flexysearch, please visit our documentation website. It provides a comprehensive guide on how to install, configure, and use Flexysearch to its full potential.
+For more detailed documentation on how to use Flexysearch, please visit our <a target="_blank" href="https://alexcastrodev.github.io/flexysearch">documentation website</a>. It provides a comprehensive guide on how to install, configure, and use Flexysearch to its full potential.
 
 Support and Community
 We have a <a href="https://discord.gg/t3vYGUuK6P">Discord group</a> dedicated to Flexysearch where you can connect with other developers and get support when you need it.
