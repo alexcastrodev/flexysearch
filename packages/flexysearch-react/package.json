@@ -1,0 +1,13 @@
+{
+  "name": "flexysearch-react",
+  "version": "0.1.1",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "flexysearch": "1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "core-js": "^3.29.1"
+  }
+}
