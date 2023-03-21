@@ -9,16 +9,15 @@ export default function useFlexysearch<T = unknown>(props?: FlexysearchHookProps
   const { state, dispatch } = useFlexysearchProvider()
   const [rules, setRules] = React.useState<IRule[]>([])
   const updateFilteredData = React.useCallback<(data: any[], searchTerm: string) => void>((data, searchTerm) => {
-  const filteredData = searchTerm
-    ? data.filter((item: T[]) => Object.values(item)
-        .some((value: T) =>
-          (value || '')
-            .toString()
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase())
-        )
-      )
-    : data;
+  let filteredData = data
+
+  if(searchTerm) {
+    filteredData = data.filter((item) => {
+      const values = Object.values(item).join(' ').toLowerCase();
+      const pattern = new RegExp(searchTerm.toLowerCase());
+      return pattern.test(values);
+    });
+  }
 
   dispatch({ kind: Kind.SET_FILTERED_DATA_ACTION, payload: filteredData as T[] });
 }, [dispatch]);

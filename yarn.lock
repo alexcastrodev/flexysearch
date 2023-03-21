@@ -6178,6 +6178,11 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
+flexysearch@1.0.0, flexysearch@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/flexysearch/-/flexysearch-1.0.0.tgz#8f8957da96af5a2a185abcb93e99092c6d32706e"
+  integrity sha512-Z4IOD0yiHR7AE4DYdG/S+k5ocHCWgX+bvKsQYKKKjqxZdOOzmdkP+W7tnvVIx2r7g3DpiIpaf5T64gFNpxinnQ==
+
 flux@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/flux/-/flux-4.0.3.tgz#573b504a24982c4768fdfb59d8d2ea5637d72ee7"

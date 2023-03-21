@@ -4,18 +4,22 @@
   "license": "MIT",
   "scripts": {
     "start:docs": "nx start flexysearch-docs",
+    "build:docs": "nx build flexysearch-docs",
     "test:flexysearch": "nx test flexysearch",
     "test:react": "nx test flexysearch-react",
-    "build:react": "nx build flexysearch-react"
+    "build:flexysearch": "nx build @flexysearch/core",
+    "build:react": "nx build flexysearch-react",
+    "publish:react:dev": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry http://localhost:4873",
+    "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/",
+    "publish:flexysearch:dev": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry http://localhost:4873",
+    "publish:flexysearch:production": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry https://registry.npmjs.org/"
   },
   "private": true,
-  "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tslib": "^2.3.0"
-  },
   "devDependencies": {
     "flexysearch": "^1.0.0",
+    "tslib": "^2.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "@nrwl/rollup": "15.8.7",
     "@babel/preset-react": "^7.14.5",
     "@nrwl/eslint-plugin-nx": "15.8.7",
@@ -58,7 +62,7 @@
     "@docusaurus/module-type-aliases": "2.3.1"
   },
   "workspaces": [
-    "packages/*",
+    "packages/flexysearch-react",
     "apps/*"
   ]
 }

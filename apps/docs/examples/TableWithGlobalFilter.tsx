@@ -21,10 +21,9 @@ export default function Module() {
 
 function TableWithGlobalFilter() {
   const { filtered_data, updateGlobalSearch } = useFlexysearch<Element>({ data }) 
-  console.log("🚀 ~ file: TableWithGlobalFilter.tsx:24 ~ TableWithGlobalFilter ~ filtered_data:", filtered_data)
 
-  const rows = filtered_data.map((element) => (
-    <tr key={element.name}>
+  const rows = filtered_data.map((element, key) => (
+    <tr key={key}>
       <td>{element.name}</td>
       <td>{element.mass}</td>
     </tr>
