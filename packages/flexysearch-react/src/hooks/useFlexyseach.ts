@@ -24,8 +24,8 @@ export default function useFlexysearch<T = unknown>(props?: FlexysearchHookProps
 
   const computedFilteredData = React.useMemo(() => {
     let collection = new Flexysearch(state.data)
-
-    if(state.filtered_data.length || !state.filtered_data.length && state.search_term) {
+    const isNotFilteredWithSearch = !state.filtered_data.length && state.search_term
+    if(state.filtered_data.length || isNotFilteredWithSearch) {
       collection = new Flexysearch(state.filtered_data)
     }
 
