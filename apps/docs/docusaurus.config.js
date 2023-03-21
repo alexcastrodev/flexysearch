@@ -9,14 +9,14 @@ const projectName = 'Flexysearch'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: projectName,
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Flexysearch is a search engine for your website',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://flexysearch.vercel.app',
+  url: 'https://alexcastrodev.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/flexysearch',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -44,7 +44,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/AlexcastroDev/flexysearch',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -59,9 +59,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Flexysearch',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'flexysearch home',
           src: 'img/logo.svg',
         },
         items: [
@@ -69,7 +69,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Get Started',
           },
           {
             href: RepositoryURL,
@@ -91,7 +91,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ${projectName}. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ${projectName}.`,
       },
       prism: {
         theme: lightCodeTheme,
