@@ -2,25 +2,39 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# Get Stated
 
-:wave: Hello, happy to see you here.
+Only node or only engine
 
+React hook
 
-# Why flexysearch
+```bash
+npm i flexysearch-react
+```
 
-I tried to find a simple solution for table searcher, including Strings, numbers and dates. Sadly, i did not found a solution for that.
+Only engine ( just if you dont want the react hook )
 
-I hope you find this solution good ( i know, its simple yet, but will be better soon ) and enjoy it.
+```bash
+npm i flexysearch
+```
 
-## How to contribute
+# Documentation
 
-### Start
+For more detailed documentation on how to use Flexysearch, please visit our <a target="_blank" href="https://alexcastrodev.github.io/flexysearch">documentation website</a>. It provides a comprehensive guide on how to install, configure, and use Flexysearch to its full potential.
 
-You can check our <a href="https://github.com/AlexcastroDev/flexysearch/issues">Issues</a>, or you can create a new one, and fork this project, finally open a PR to `dev` branch.
+Support and Community
+We have a <a href="https://discord.gg/t3vYGUuK6P">Discord group</a> dedicated to Flexysearch where you can connect with other developers and get support when you need it.
 
-I'll be quick to implement and improve this package, and if you open a pull request, i'll help you with a new release as soon as possible.
+# Why Flexysearch?
 
-### Testing
+We created Flexysearch because we were looking for a simple solution for table searching that could handle strings, numbers, and dates. We couldn't find an existing solution that met our needs, so we decided to create our own.
 
-I ask you to implement unit test, as i did.
+# Contributing
+
+We welcome contributions from the community! If you want to contribute to Flexysearch, please start by checking our issues or creating a new one. Then, fork the project and submit a pull request to the dev branch.
+
+We appreciate it if you could include unit tests for any code changes you submit.
+
+# License
+
+Flexysearch is licensed under the MIT License. See the LICENSE file for more information.
