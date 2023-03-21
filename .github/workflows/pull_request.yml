@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.10.0'
+          node-version: '16.14.0'
       - name: Load Yarn cache
         uses: actions/cache@v3
         with:
@@ -29,7 +29,9 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Build public packages
-        run: npm run build
+      - name: Build flexysearch
+        run: npm run build:flexysearch
+      - name: Build flexysearch-react
+        run: npm run build:react
       - name: Run eslint and jest
         run: npm run test:ci
