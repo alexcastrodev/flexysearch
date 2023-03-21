@@ -14,7 +14,8 @@
     "test:react": "nx test flexysearch-react",
     "build:react": "nx build flexysearch-react",
     "publish:react:dev": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry http://localhost:4873",
-    "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/"
+    "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/",
+    "test:ci": "npm run test:flexysearch && npm run test:react"
   },
   "private": true,
   "devDependencies": {
