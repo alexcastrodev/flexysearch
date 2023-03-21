@@ -6,13 +6,15 @@
     "start:docs": "nx start flexysearch-docs",
     "build:docs": "nx build flexysearch-docs",
     "test:flexysearch": "nx test flexysearch",
-    "test:react": "nx test flexysearch-react",
+    "lint:flexysearch": "nx lint @flexysearch/core",
     "build:flexysearch": "nx build @flexysearch/core",
+    "publish:flexysearch:dev": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry http://localhost:4873",
+    "publish:flexysearch:production": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry https://registry.npmjs.org/",
+    "lint:react": "nx lint flexysearch-react",
+    "test:react": "nx test flexysearch-react",
     "build:react": "nx build flexysearch-react",
     "publish:react:dev": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry http://localhost:4873",
-    "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/",
-    "publish:flexysearch:dev": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry http://localhost:4873",
-    "publish:flexysearch:production": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry https://registry.npmjs.org/"
+    "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/"
   },
   "private": true,
   "devDependencies": {

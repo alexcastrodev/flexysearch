@@ -121,7 +121,7 @@ describe('FlexysearchReact - Filters', () => {
 })
 
 describe('Edges cases', () => {
-  it('Should return empty array when not match', () => {
+  it('Should return empty array when not match', () => {
     const searchTerm = 'aaaaa'
     const data = [{ name: 'test', mass: 100 }]
     const { result } = renderHook(() => useFlexysearch({ data }), { wrapper: FlexysearchProvider })
