@@ -1,7 +1,7 @@
 import { RuleNumberOptions } from './../../interfaces/index'
 import SearchEngine from '..'
 import { IRuleType, RuleOperator, RuleStringOptions } from '../../interfaces'
-import collection from '../../__mocks__/movies.json'
+import collection from '../../../../__mocks__/movies.json'
 
 describe('Should match strings', () => {
   it('[Number]: Should cause exception', () => {

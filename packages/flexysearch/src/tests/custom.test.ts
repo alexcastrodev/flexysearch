@@ -1,6 +1,6 @@
 import SearchEngine from '..'
 import { RuleOperator } from '../../interfaces'
-import collection from '../../__mocks__/movies.json'
+import collection from '../../../../__mocks__/movies.json'
 
 interface IMovie {
   id: number
