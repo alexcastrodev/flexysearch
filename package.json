@@ -5,7 +5,7 @@
   "scripts": {
     "start:docs": "nx start flexysearch-docs",
     "build:docs": "nx build flexysearch-docs",
-    "test:flexysearch": "nx test flexysearch",
+    "test:flexysearch": "nx test @flexysearch/core",
     "lint:flexysearch": "nx lint @flexysearch/core",
     "build:flexysearch": "nx build @flexysearch/core",
     "publish:flexysearch:dev": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry http://localhost:4873",
