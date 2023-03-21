@@ -1,66 +1,39 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7763543ba12e46f8860743354278f206)](https://www.codacy.com/gh/AlexcastroDev/flexysearch/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexcastroDev/flexysearch&amp;utm_campaign=Badge_Grade)
 
+Welcome to Flexysearch! Flexysearch is a simple and customizable search library that allows you to search for strings, numbers, and dates in tables. It's easy to use, and it provides a beautiful React hook that implements Flexysearch, saving you time and energy.
 
-# Greetings
+# Get Stated
 
-:wave: Hello, happy to see you here.
+Only node or only engine
 
-You can read some <a href="https://alexcastrodev.notion.site/Flexysearch-26f246418e964e708cf009b5d5e97be2">Documentation</a>
+React hook
 
-# Support and Community
+```bash
+npm i flexysearch-react
+```
 
-<a href="https://discord.gg/t2cEDEXSGq">Discord</a>
-
-# Why flexysearch
-
-I tried to find a simple solution for table searcher, including Strings, numbers and dates. Sadly, i did not found a solution for that.
-
-I hope you find this solution good ( i know, its simple yet, but will be better soon ) and enjoy it.
-
-# Quick Start
-
-If you want to use `npm`, you can use this command.
+Only engine ( just if you dont want the react hook )
 
 ```bash
 npm i flexysearch
 ```
 
-Maybe you want to use `yarn`.
+# Documentation
+For more detailed documentation on how to use Flexysearch, please visit our documentation website. It provides a comprehensive guide on how to install, configure, and use Flexysearch to its full potential.
 
-```bash
-yarn add flexysearch
-```
+Support and Community
+We have a <a href="https://discord.gg/t3vYGUuK6P">Discord group</a> dedicated to Flexysearch where you can connect with other developers and get support when you need it.
 
-## How to use
 
-This `package` does not have any dependencies. Therefore, you are free to design what you want.
+# Why Flexysearch?
 
-## imports
+We created Flexysearch because we were looking for a simple solution for table searching that could handle strings, numbers, and dates. We couldn't find an existing solution that met our needs, so we decided to create our own.
 
-Import this module
+# Contributing
+We welcome contributions from the community! If you want to contribute to Flexysearch, please start by checking our issues or creating a new one. Then, fork the project and submit a pull request to the dev branch.
 
-```javascript
-import Flexysearch from 'flexysearch';
-```
+We appreciate it if you could include unit tests for any code changes you submit.
 
-## Tests
+# License
 
-All calls and exceptions are covered by Jest
-
-## How to contribute
-
-### Start
-
-You can check our <a href="https://github.com/AlexcastroDev/flexysearch/issues">Issues</a>, or you can create a new one, and fork this project, finally open a PR to `dev` branch.
-
-I'll be quick to implement and improve this package, and if you open a pull request, i'll help you with a new release as soon as possible.
-
-### Testing
-
-I ask you to implement unit test, as i did.
-
-### Changelog
-
-follow this pattern:
-
-https://keepachangelog.com/en/1.0.0/
+Flexysearch is licensed under the MIT License. See the LICENSE file for more information.
