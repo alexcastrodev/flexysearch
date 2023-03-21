@@ -1,5 +1,6 @@
 {
   "name": "flexysearch",
-  "version": "2.0.0",
-  "type": "commonjs"
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "./src/index.ts"
 }

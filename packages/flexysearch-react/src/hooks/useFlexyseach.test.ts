@@ -119,3 +119,17 @@ describe('FlexysearchReact - Filters', () => {
     expect(result.current.filtered_data).toEqual(dataToFindSearch)
   });
 })
+
+describe('Edges cases', () => {
+  it('Should return empty array when not match', () => {
+    const searchTerm = 'aaaaa'
+    const data = [{ name: 'test', mass: 100 }]
+    const { result } = renderHook(() => useFlexysearch({ data }), { wrapper: FlexysearchProvider })
+
+    act(() => {
+      result.current.updateGlobalSearch(searchTerm)
+    })
+
+    expect(result.current.filtered_data).toEqual([])
+  })
+})

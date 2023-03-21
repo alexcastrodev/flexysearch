@@ -1,5 +1,5 @@
 {
-  "name": "flexysearch",
+  "name": "@flexysearch/core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/flexysearch/src",
   "projectType": "library",

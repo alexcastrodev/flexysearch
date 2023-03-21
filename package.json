@@ -1,10 +1,12 @@
 {
-  "name": "flexysearch",
+  "name": "@flexysearch/workspace",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start:docs": "nx start flexysearch-docs",
     "test:flexysearch": "nx test flexysearch",
-    "test:react": "nx test flexysearch-react"
+    "test:react": "nx test flexysearch-react",
+    "build:react": "nx build flexysearch-react"
   },
   "private": true,
   "dependencies": {
@@ -13,6 +15,8 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "flexysearch": "^1.0.0",
+    "@nrwl/rollup": "15.8.7",
     "@babel/preset-react": "^7.14.5",
     "@nrwl/eslint-plugin-nx": "15.8.7",
     "@nrwl/jest": "15.8.7",
@@ -42,9 +46,19 @@
     "react-test-renderer": "18.2.0",
     "ts-jest": "^29.0.5",
     "ts-node": "10.9.1",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "@docusaurus/core": "2.3.1",
+    "@docusaurus/preset-classic": "2.3.1",
+    "@mdx-js/react": "^1.6.22",
+    "clsx": "^1.2.1",
+    "prism-react-renderer": "^1.3.5",
+    "@mantine/core": "^6.0.2",
+    "@mantine/hooks": "^6.0.2",
+    "@emotion/react": "11.10.6",
+    "@docusaurus/module-type-aliases": "2.3.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ]
 }
