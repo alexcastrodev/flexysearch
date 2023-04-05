@@ -1,4 +1,6 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7763543ba12e46f8860743354278f206)](https://www.codacy.com/gh/AlexcastroDev/flexysearch/dashboard?utm_source=github.com&utm_medium=referral&utm_content=AlexcastroDev/flexysearch&utm_campaign=Badge_Grade)
+[![DeepSource](https://deepsource.io/gh/AlexcastroDev/flexysearch.svg/?label=active+issues&show_trend=true&token=1wKwpordCvhMLaZczotKat_y)](https://deepsource.io/gh/AlexcastroDev/flexysearch/?ref=repository-badge)
+
+[![DeepSource](https://deepsource.io/gh/AlexcastroDev/flexysearch.svg/?label=resolved+issues&show_trend=true&token=1wKwpordCvhMLaZczotKat_y)](https://deepsource.io/gh/AlexcastroDev/flexysearch/?ref=repository-badge)
 
 Welcome to Flexysearch! Flexysearch is a simple and customizable search library that allows you to search for strings, numbers, and dates in tables. It's easy to use, and it provides a beautiful React hook that implements Flexysearch, saving you time and energy.
 
