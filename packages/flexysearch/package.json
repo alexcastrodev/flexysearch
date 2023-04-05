@@ -1,6 +1,17 @@
 {
   "name": "flexysearch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "commonjs",
-  "main": "./src/index.ts"
+  "main": "./src/index.ts",
+  "description": "A package for tables searching flexibly",
+  "author": {
+    "name": "alexandro castro",
+    "email": "oi@alexandrocastro.dev.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexcastroDev/flexysearch.git"
+  },
+  "homepage": "https://alexcastrodev.github.io/flexysearch",
+  "license": "MIT"
 }

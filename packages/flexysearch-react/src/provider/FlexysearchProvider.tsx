@@ -81,6 +81,11 @@ export default function FlexysearchProvider<T>({
       updateFilterRules: (rules: IRule[]) => {
         setRules(rules);
       },
+      handleClearFilter: () => {
+        const rules: IRule[] = [];
+        setRules(rules);
+        setLocalSearch('');
+      },
     } as FlexysearchHookProvider<DataType>;
   }, [setData, setRules, state, localSearch, rules, data]);
 

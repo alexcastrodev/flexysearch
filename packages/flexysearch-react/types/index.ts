@@ -6,6 +6,7 @@ export interface FlexysearchHookProvider<T> {
   setData: (data: T[]) => void;
   updateGlobalSearch: (value: string) => void;
   updateFilterRules: (rules: IRule[]) => void;
+  handleClearFilter: () => void;
   searchValue: string;
   rules: IRule[];
 }
