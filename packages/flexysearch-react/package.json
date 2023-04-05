@@ -1,6 +1,6 @@
 {
   "name": "flexysearch-react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "./src/index.ts",
   "dependencies": {
     "flexysearch": "1.0.0"
