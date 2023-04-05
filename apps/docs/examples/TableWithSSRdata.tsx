@@ -30,10 +30,11 @@ function TableWithGlobalFilter() {
     updateFilterRules,
     searchValue,
     rules,
+    handleClearFilter,
   } = useFlexysearch<Element>();
 
-  const rows = filtered_data.map((element, key) => (
-    <tr key={key}>
+  const rows = filtered_data.map((element) => (
+    <tr key={element.name}>
       <td>{element.name}</td>
       <td>{element.power}</td>
     </tr>
@@ -70,12 +71,6 @@ function TableWithGlobalFilter() {
     updateFilterRules(rules);
   };
 
-  const clear = () => {
-    const rules: IRule[] = [];
-    updateFilterRules(rules);
-    updateGlobalSearch('');
-  };
-
   return (
     <Card>
       <Grid>
@@ -102,10 +97,9 @@ function TableWithGlobalFilter() {
               (item) => item.role === RuleNumberOptions.biggerOrEquals
             )}
           >
-            {' '}
-            Filter Upper 50{' '}
+            Filter Upper 50
           </Button>
-          <Button variant="subtle" onClick={clear}>
+          <Button variant="subtle" onClick={handleClearFilter}>
             Clear
           </Button>
         </Grid.Col>

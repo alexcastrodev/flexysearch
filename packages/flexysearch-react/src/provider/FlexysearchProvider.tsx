@@ -85,6 +85,10 @@ export default function FlexysearchProvider<T>({
         const rules: IRule[] = [];
         setRules(rules);
         setLocalSearch('');
+        dispatch({
+          kind: Kind.SET_FILTERED_DATA_ACTION,
+          payload: state.data,
+        });
       },
     } as FlexysearchHookProvider<DataType>;
   }, [setData, setRules, state, localSearch, rules, data]);
