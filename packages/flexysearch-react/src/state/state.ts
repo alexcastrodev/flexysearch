@@ -1,6 +1,6 @@
 import { FlexysearchHookState } from './../../types/index';
 
-const initialState: FlexysearchHookState = {
+const initialState: FlexysearchHookState<unknown> = {
   data: [],
   filtered_data: [],
 };
