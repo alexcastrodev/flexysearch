@@ -44,10 +44,11 @@ export default function FlexysearchProvider<T>({
   };
 
   React.useEffect(() => {
-    data && setData(data as DataType[]);
+    data?.length && setData(data as DataType[]);
   }, [data]);
 
   React.useEffect(() => {
+    if (rules.length === 0 && !state.filtered_data.length) return;
     React.startTransition(() => {
       dispatch({
         kind: Kind.SET_FILTERED_DATA_ACTION,
@@ -81,7 +82,7 @@ export default function FlexysearchProvider<T>({
         setRules(rules);
       },
     } as FlexysearchHookProvider<DataType>;
-  }, [setData, setRules, state, localSearch, rules]);
+  }, [setData, setRules, state, localSearch, rules, data]);
 
   return (
     <FlexysearchContext.Provider value={flexysearch}>

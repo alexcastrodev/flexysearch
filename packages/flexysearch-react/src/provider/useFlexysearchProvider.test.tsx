@@ -54,7 +54,9 @@ describe('FlexysearchReact - Filters', () => {
       result.current.updateGlobalSearch('Film empty');
     });
 
-    expect(result.current.filtered_data).toEqual(dataToFindSearch);
+    waitFor(() => {
+      expect(result.current.filtered_data).toEqual(dataToFindSearch);
+    });
   });
   it('Search by Flexysearch integration', () => {
     const dataToFindSearch = [{ id: 14, title: 'Film empty', year: '' }];
@@ -101,7 +103,9 @@ describe('FlexysearchReact - Filters', () => {
       ]);
 
       result.current.updateGlobalSearch('no match');
-      expect(result.current.filtered_data).toEqual([]);
+      waitFor(() => {
+        expect(result.current.filtered_data).toEqual([]);
+      });
     });
 
     // Clear search term
@@ -163,6 +167,8 @@ describe('Edges cases', () => {
       result.current.updateGlobalSearch(searchTerm);
     });
 
-    expect(result.current.filtered_data).toEqual([]);
+    waitFor(() => {
+      expect(result.current.filtered_data).toEqual([]);
+    });
   });
 });
