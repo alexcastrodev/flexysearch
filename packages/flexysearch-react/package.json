@@ -1,6 +1,6 @@
 {
   "name": "flexysearch-react",
-  "version": "0.1.1",
+  "version": "0.3.2",
   "main": "./src/index.ts",
   "dependencies": {
     "flexysearch": "1.0.0"
@@ -9,5 +9,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "core-js": "^3.29.1"
-  }
+  },
+  "description": "A package for tables searching flexibly with  React",
+  "author": {
+    "name": "alexandro castro",
+    "email": "oi@alexandrocastro.dev.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexcastroDev/flexysearch.git"
+  },
+  "homepage": "https://alexcastrodev.github.io/flexysearch",
+  "license": "MIT"
 }

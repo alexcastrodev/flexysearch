@@ -17,7 +17,7 @@ const mockDataServ = [
 
 export default function Module() {
   return (
-    <FlexysearchProvider>
+    <FlexysearchProvider data={mockDataServ}>
       <TableWithGlobalFilter />
     </FlexysearchProvider>
   );
@@ -27,16 +27,11 @@ function TableWithGlobalFilter() {
   const {
     filtered_data,
     updateGlobalSearch,
-    setData,
     updateFilterRules,
     searchValue,
     rules,
     handleClearFilter,
   } = useFlexysearch<Element>();
-
-  React.useEffect(() => {
-    setData(mockDataServ);
-  }, []);
 
   const rows = filtered_data.map((element) => (
     <tr key={element.name}>

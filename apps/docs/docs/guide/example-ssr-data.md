@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-import TableWithGlobalFilter from '../../examples/TableWithGlobalFilter'
+import TableWithGlobalFilter from '../../examples/TableWithSSRdata'
 
-# Global filter
+# SSR Data
 
 ## Create your first React Page
 
@@ -20,14 +20,12 @@ Create a file at `src/pages/my-react-page.js`:
 import React from 'react';
 import { useFlexysearch, FlexysearchProvider } from 'flexysearch-react';
 
-const data = [{ name: 'Testing', mass: 100 }];
-
 // Each Table should have the FlexysearchProvider
-export default function Module() {
+export default function App({ appProps }) {
   return (
     // You can set default data here
     // <FlexysearchProvider data={[] as Element[]}>
-    <FlexysearchProvider>
+    <FlexysearchProvider data={appProps.table.data}>
       <TableWithGlobalFilter />
     </FlexysearchProvider>
   );
