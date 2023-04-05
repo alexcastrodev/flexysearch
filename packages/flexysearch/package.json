@@ -1,8 +1,14 @@
 {
   "name": "flexysearch",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "type": "commonjs",
-  "main": "./src/index.ts",
   "description": "A package for tables searching flexibly",
   "author": {
     "name": "alexandro castro",
