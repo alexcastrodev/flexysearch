@@ -1,12 +1,13 @@
 {
   "name": "flexysearch",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "source": "src/index.ts",
   "main": "src/index.js",
   "module": "src/index.esm.js",
   "types": "src/index.d.ts",
   "files": [
-    "dist"
+    "src",
+    "interfaces"
   ],
   "type": "commonjs",
   "description": "A package for tables searching flexibly",
