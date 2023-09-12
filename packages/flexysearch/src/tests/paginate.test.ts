@@ -113,7 +113,7 @@ describe('Paginate', () => {
     }>(2, 2)
 
     // Check types :)
-    expect(resultsPaginated.data.at(0)?.title).toBeDefined()
+    expect(resultsPaginated.data.at(0)?.title).not.toBeDefined()
 
     expect(resultsPaginated).toEqual({
       data: [],
