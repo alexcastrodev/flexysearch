@@ -31,6 +31,11 @@ class SearchEngine {
     return this.all;
   }
 
+  public searchQuery(queries: IRule[]) {
+    this.search(queries);
+    return this;
+  }
+
   private processShouldArraySearch(queryArray: IRule[]) {
     this.shouldHave = this.initialData.filter((data) =>
       this.filterData(data, queryArray)

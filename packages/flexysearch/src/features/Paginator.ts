@@ -1,3 +1,4 @@
+import { off } from 'process';
 import { IPaginator } from '..';
 
 class Paginator implements IPaginator {
@@ -32,11 +33,15 @@ class Paginator implements IPaginator {
   get lastPage() {
     return Math.ceil(this.total / this.perPage);
   }
+
+  get offset() {
+    return this.perPage * (this.currentPage - 1);
+  }
 }
 
 class Paginate<T = unknown> {
   data: T[];
-  meta: IPaginator;
+  meta: Paginator;
 
   constructor(data: T[], limit: number) {
     this.data = data;
@@ -48,10 +53,25 @@ class Paginate<T = unknown> {
     return this;
   }
 
+  get metaObject(): IPaginator {
+    return {
+      perPage: this.meta.perPage,
+      currentPage: this.meta.currentPage,
+      total: this.meta.total,
+      firstPage: this.meta.firstPage,
+      isEmpty: this.meta.isEmpty,
+      hasTotal: this.meta.hasTotal,
+      hasMorePages: this.meta.hasMorePages,
+      hasPages: this.meta.hasPages,
+      lastPage: this.meta.lastPage,
+      offset: this.meta.offset,
+    };
+  }
+
   get all() {
     return {
-      data: this.data.slice(0, this.meta.perPage),
-      meta: this.meta,
+      data: this.data.slice(this.meta.offset, this.meta.perPage),
+      meta: this.metaObject,
     };
   }
 }

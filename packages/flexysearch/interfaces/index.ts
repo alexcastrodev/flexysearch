@@ -64,4 +64,5 @@ export interface IPaginator {
   lastPage: number;
   hasMorePages: boolean;
   hasPages: boolean;
+  offset: number;
 }
