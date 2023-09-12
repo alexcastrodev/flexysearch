@@ -1,4 +1,4 @@
-export type IRuleType = 'string' | 'number' | 'date' | 'custom'
+export type IRuleType = 'string' | 'number' | 'date' | 'custom';
 
 export enum RuleStringOptions {
   contains = 'contains',
@@ -40,16 +40,28 @@ export enum RuleOperator {
   OR = '@or',
 }
 
-export type IRoles = RuleStringOptions | RuleNumberOptions | RuleDateOptions
+export type IRoles = RuleStringOptions | RuleNumberOptions | RuleDateOptions;
 
-export type IRuleFilter<T = any> = (datum: T) => boolean
+export type IRuleFilter<T = any> = (datum: T) => boolean;
 
 export interface IRule {
-  type: IRuleType
-  operator: RuleOperator
-  field?: string
-  term?: any
-  role?: IRoles
-  caseSensitive?: boolean
-  filter?: IRuleFilter
+  type: IRuleType;
+  operator: RuleOperator;
+  field?: string;
+  term?: any;
+  role?: IRoles;
+  caseSensitive?: boolean;
+  filter?: IRuleFilter;
+}
+
+export interface IPaginator {
+  perPage: number;
+  currentPage: number;
+  firstPage: number;
+  isEmpty: boolean;
+  total: number;
+  hasTotal: boolean;
+  lastPage: number;
+  hasMorePages: boolean;
+  hasPages: boolean;
 }
