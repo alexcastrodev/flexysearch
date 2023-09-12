@@ -66,3 +66,8 @@ export interface IPaginator {
   hasPages: boolean
   offset: number
 }
+
+export interface IPaginateResult<T = unknown> {
+  data: T[]
+  meta: IPaginator
+}

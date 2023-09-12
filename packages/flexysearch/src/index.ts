@@ -1,5 +1,5 @@
 import { StringProcessor } from './utils/strings'
-import { IRule, RuleOperator } from '../interfaces'
+import { IPaginateResult, IRule, RuleOperator } from '../interfaces'
 import { NumberProcessor } from './utils/number'
 import { hashCode } from './utils/hash'
 import { DateProcessor } from './utils/dates'
@@ -106,7 +106,7 @@ class SearchEngine {
     )
   }
 
-  paginate<T = unknown>(page: number, perPage = 10) {
+  paginate<T = unknown>(page: number, perPage = 10): IPaginateResult<T> {
     return new Paginate<T>(this.all, perPage).page(page).all
   }
 }
