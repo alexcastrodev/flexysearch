@@ -1,9 +1,9 @@
-import SearchEngine, { RuleOperator, RuleStringOptions } from '..';
-import collection from '../../../../__mocks__/movies.json';
+import SearchEngine, { RuleOperator, RuleStringOptions } from '..'
+import collection from '../../../../__mocks__/movies.json'
 
 describe('Paginate', () => {
   it('Should paginate without search', () => {
-    const results = new SearchEngine(collection).paginate(1, 5);
+    const results = new SearchEngine(collection).paginate(1, 5)
 
     expect(results).toEqual({
       data: [
@@ -25,8 +25,8 @@ describe('Paginate', () => {
         hasMorePages: true,
         isEmpty: false,
       },
-    });
-  });
+    })
+  })
   it('Should paginate without search', () => {
     const results = new SearchEngine(collection).searchQuery([
       {
@@ -43,14 +43,14 @@ describe('Paginate', () => {
         type: 'string',
         operator: RuleOperator.OR,
       },
-    ]);
+    ])
 
     expect(results.all).toEqual([
       { id: 3, title: 'Film 3', year: 2014 },
       { id: 1, title: 'Film 1', year: 2009 },
-    ]);
+    ])
 
-    const resultsPaginated = results.paginate(1, 1);
+    const resultsPaginated = results.paginate(1, 1)
 
     expect(resultsPaginated).toEqual({
       data: [{ id: 3, title: 'Film 3', year: 2014 }],
@@ -66,8 +66,8 @@ describe('Paginate', () => {
         hasMorePages: true,
         isEmpty: false,
       },
-    });
-    const resultsPaginatedUpdated = results.paginate(1, 2);
+    })
+    const resultsPaginatedUpdated = results.paginate(1, 2)
 
     expect(resultsPaginatedUpdated).toEqual({
       data: [
@@ -86,8 +86,8 @@ describe('Paginate', () => {
         hasMorePages: false,
         isEmpty: false,
       },
-    });
-  });
+    })
+  })
   it('Get invalid page', () => {
     const results = new SearchEngine(collection).searchQuery([
       {
@@ -104,16 +104,16 @@ describe('Paginate', () => {
         type: 'string',
         operator: RuleOperator.OR,
       },
-    ]);
+    ])
 
     const resultsPaginated = results.paginate<{
-      id: number;
-      title: string;
-      year: number;
-    }>(2, 2);
+      id: number
+      title: string
+      year: number
+    }>(2, 2)
 
     // Check types :)
-    expect(resultsPaginated.data.at(0)?.title).toBeDefined();
+    expect(resultsPaginated.data.at(0)?.title).toBeDefined()
 
     expect(resultsPaginated).toEqual({
       data: [],
@@ -129,6 +129,6 @@ describe('Paginate', () => {
         hasMorePages: false,
         isEmpty: false,
       },
-    });
-  });
-});
+    })
+  })
+})
