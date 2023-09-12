@@ -20,7 +20,7 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Publish Core
         run: publish:flexysearch:production
