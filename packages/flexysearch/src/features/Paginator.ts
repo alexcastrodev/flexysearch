@@ -1,17 +1,13 @@
-import { off } from 'process';
 import { IPaginator } from '..';
 
 class Paginator implements IPaginator {
   perPage = 10;
   currentPage = 1;
   total = 0;
+  firstPage = 1;
 
   constructor(data: Partial<IPaginator>) {
     Object.assign(this, data);
-  }
-
-  get firstPage() {
-    return 1;
   }
 
   get isEmpty() {
