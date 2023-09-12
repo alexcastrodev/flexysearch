@@ -20,7 +20,10 @@ export class DateProcessor {
   }
 
   private checkIsEqualDate(valueToBeCompared: string) {
-    if (!this.checkIsValid(valueToBeCompared) || !this.checkIsValid(this.term)) {
+    if (
+      !this.checkIsValid(valueToBeCompared) ||
+      !this.checkIsValid(this.term)
+    ) {
       return false
     }
 
@@ -28,13 +31,20 @@ export class DateProcessor {
     const dateTerm = new Date(this.term)
 
     const date1 = [date.getDate(), date.getMonth(), date.getFullYear()].join('')
-    const date2 = [dateTerm.getDate(), dateTerm.getMonth(), dateTerm.getFullYear()].join('')
+    const date2 = [
+      dateTerm.getDate(),
+      dateTerm.getMonth(),
+      dateTerm.getFullYear(),
+    ].join('')
 
     return date1 === date2
   }
 
   private checkIsNotEqualDate(valueToBeCompared: string) {
-    if (!this.checkIsValid(valueToBeCompared) || !this.checkIsValid(this.term)) {
+    if (
+      !this.checkIsValid(valueToBeCompared) ||
+      !this.checkIsValid(this.term)
+    ) {
       return true
     }
 
@@ -42,13 +52,24 @@ export class DateProcessor {
     const dateTerm = new Date(this.term)
 
     const date1 = [date.getDate(), date.getMonth(), date.getFullYear()].join('')
-    const date2 = [dateTerm.getDate(), dateTerm.getMonth(), dateTerm.getFullYear()].join('')
+    const date2 = [
+      dateTerm.getDate(),
+      dateTerm.getMonth(),
+      dateTerm.getFullYear(),
+    ].join('')
 
     return date1 !== date2
   }
 
-  private isAfterOrBefore(valueToBeCompared: string, isBefore = false, includeOn = false) {
-    if (!this.checkIsValid(valueToBeCompared) || !this.checkIsValid(this.term)) {
+  private isAfterOrBefore(
+    valueToBeCompared: string,
+    isBefore = false,
+    includeOn = false
+  ) {
+    if (
+      !this.checkIsValid(valueToBeCompared) ||
+      !this.checkIsValid(this.term)
+    ) {
       return false
     }
 
@@ -70,7 +91,11 @@ export class DateProcessor {
     const isInvalidStart = !this.checkIsValid(this.term[0])
     const isInvalidEnd = !this.checkIsValid(this.term[1])
 
-    if (isInvalidStart || isInvalidEnd || !this.checkIsValid(valueToBeCompared)) {
+    if (
+      isInvalidStart ||
+      isInvalidEnd ||
+      !this.checkIsValid(valueToBeCompared)
+    ) {
       return false
     }
 

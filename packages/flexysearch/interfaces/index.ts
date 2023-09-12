@@ -53,3 +53,16 @@ export interface IRule {
   caseSensitive?: boolean
   filter?: IRuleFilter
 }
+
+export interface IPaginator {
+  perPage: number
+  currentPage: number
+  firstPage: number
+  isEmpty: boolean
+  total: number
+  hasTotal: boolean
+  lastPage: number
+  hasMorePages: boolean
+  hasPages: boolean
+  offset: number
+}
