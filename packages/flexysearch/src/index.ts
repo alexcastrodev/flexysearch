@@ -4,6 +4,7 @@ import { NumberProcessor } from './utils/number'
 import { hashCode } from './utils/hash'
 import { DateProcessor } from './utils/dates'
 import { omit } from './utils/helpers/objects'
+import Paginate from './features/Paginator'
 class SearchEngine {
   private shouldHave: any[] = []
   private mustHave: any[] = []
@@ -30,12 +31,21 @@ class SearchEngine {
     return this.all
   }
 
+  public searchQuery(queries: IRule[]) {
+    this.search(queries)
+    return this
+  }
+
   private processShouldArraySearch(queryArray: IRule[]) {
-    this.shouldHave = this.initialData.filter((data) => this.filterData(data, queryArray))
+    this.shouldHave = this.initialData.filter((data) =>
+      this.filterData(data, queryArray)
+    )
   }
 
   private processMustArraySearch(queryArray: IRule[]) {
-    this.mustHave = this.mustHave.filter((data) => this.filterMustArrayData(data, queryArray))
+    this.mustHave = this.mustHave.filter((data) =>
+      this.filterMustArrayData(data, queryArray)
+    )
   }
 
   private filterData(data: Record<string, string>, queryArray: IRule[]) {
@@ -44,7 +54,10 @@ class SearchEngine {
     })
   }
 
-  private filterMustArrayData(data: Record<string, string>, queryArray: IRule[]) {
+  private filterMustArrayData(
+    data: Record<string, string>,
+    queryArray: IRule[]
+  ) {
     const checkedsRoles = queryArray.map((queryCurrent) => {
       return this.someDataIsValid(queryCurrent, data)
     })
@@ -55,18 +68,20 @@ class SearchEngine {
     const field = queryCurrent.field || ''
     switch (queryCurrent.type) {
       case 'string':
-        return new StringProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[field],
-          queryCurrent.caseSensitive || false,
-        )
+        return new StringProcessor(
+          queryCurrent?.term || null,
+          queryCurrent.role
+        ).compareWith(data[field], queryCurrent.caseSensitive || false)
       case 'number':
-        return new NumberProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[field],
-        )
+        return new NumberProcessor(
+          queryCurrent?.term || null,
+          queryCurrent.role
+        ).compareWith(data[field])
       case 'date':
-        return new DateProcessor(queryCurrent?.term || null, queryCurrent.role).compareWith(
-          data[field],
-        )
+        return new DateProcessor(
+          queryCurrent?.term || null,
+          queryCurrent.role
+        ).compareWith(data[field])
       case 'custom':
         if (queryCurrent.filter && typeof queryCurrent.filter === 'function') {
           const datum = omit(data, ['fs_uuid'])
@@ -89,6 +104,10 @@ class SearchEngine {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .map(({ fs_uuid, ...rest }) => rest)
     )
+  }
+
+  paginate<T = unknown>(page: number, perPage = 10) {
+    return new Paginate<T>(this.all, perPage).page(page).all
   }
 }
 

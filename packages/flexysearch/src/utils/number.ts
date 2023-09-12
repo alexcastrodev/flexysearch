@@ -16,7 +16,8 @@ export class NumberProcessor {
 
   private checkContains(valueToBeCompared: string) {
     const regexpMatches = (
-      String(valueToBeCompared).match(this.getRegexValue(String(this.term))) || []
+      String(valueToBeCompared).match(this.getRegexValue(String(this.term))) ||
+      []
     ).length
 
     if (this.role === RuleNumberOptions.notContains) {
