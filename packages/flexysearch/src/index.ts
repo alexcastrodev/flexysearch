@@ -106,8 +106,8 @@ class SearchEngine {
     );
   }
 
-  paginate(page: number, perPage = 10) {
-    return new Paginate(this.all, perPage).page(page).all;
+  paginate<T = unknown>(page: number, perPage = 10) {
+    return new Paginate<T>(this.all, perPage).page(page).all;
   }
 }
 

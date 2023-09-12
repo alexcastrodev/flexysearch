@@ -106,7 +106,14 @@ describe('Paginate', () => {
       },
     ]);
 
-    const resultsPaginated = results.paginate(2, 2);
+    const resultsPaginated = results.paginate<{
+      id: number;
+      title: string;
+      year: number;
+    }>(2, 2);
+
+    // Check types :)
+    expect(resultsPaginated.data.at(0)?.title).toBeDefined();
 
     expect(resultsPaginated).toEqual({
       data: [],
