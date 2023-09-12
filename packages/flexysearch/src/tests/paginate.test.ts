@@ -132,3 +132,40 @@ describe('Paginate', () => {
     })
   })
 })
+
+describe('Handlers', () => {
+  it('Should handle null or undefined data', () => {
+    // @ts-expect-error Testing purpose
+    const results = new SearchEngine(undefined).searchQuery([
+      {
+        field: 'title',
+        term: 'film 3',
+        role: RuleStringOptions.equals,
+        type: 'string',
+        operator: RuleOperator.AND,
+      },
+    ])
+
+    const resultsPaginated = results.paginate<{
+      id: number
+      title: string
+      year: number
+    }>(2, 2)
+
+    expect(resultsPaginated).toEqual({
+      data: [],
+      meta: {
+        perPage: 2,
+        currentPage: 2,
+        firstPage: 1,
+        total: 0,
+        lastPage: 0,
+        offset: 2,
+        hasPages: false,
+        hasTotal: false,
+        hasMorePages: false,
+        isEmpty: true,
+      },
+    })
+  })
+})

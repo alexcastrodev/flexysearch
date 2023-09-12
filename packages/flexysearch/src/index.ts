@@ -11,6 +11,9 @@ class SearchEngine {
   private initialData: any[] = []
 
   constructor(collection: any[]) {
+    if (!Array.isArray(collection)) {
+      return
+    }
     const collectionToBeStored = collection.map((item) => ({
       fs_uuid: hashCode(JSON.stringify(item)),
       ...item,
@@ -107,7 +110,11 @@ class SearchEngine {
   }
 
   paginate<T = unknown>(page: number, perPage = 10): IPaginateResult<T> {
-    return new Paginate<T>(this.all, perPage).page(page).all
+    try {
+      return new Paginate<T>(this.all, perPage).page(page).all
+    } catch {
+      return new Paginate<T>([], perPage).page(page).all
+    }
   }
 }
 

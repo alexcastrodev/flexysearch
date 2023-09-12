@@ -8,7 +8,13 @@ sidebar_position: 1
 
 ## [Release]
 
-## [1.2.0] Flexysearch - 2023-09-12
+## [1.2.2] Flexysearch - 2023-09-12
+
+## Added
+
+- Handlers of undefined values
+
+## [1.2.1] Flexysearch - 2023-09-12
 
 ## Added
 
