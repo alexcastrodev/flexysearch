@@ -66,7 +66,10 @@ class Paginate<T = unknown> {
 
   get all() {
     return {
-      data: this.data.slice(this.meta.offset, this.meta.perPage),
+      data: this.data.slice(
+        this.meta.offset,
+        this.meta.offset + this.meta.perPage
+      ),
       meta: this.metaObject,
     }
   }

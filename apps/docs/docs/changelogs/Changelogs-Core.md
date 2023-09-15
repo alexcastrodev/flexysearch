@@ -8,6 +8,12 @@ sidebar_position: 1
 
 ## [Release]
 
+## [1.2.3] Flexysearch - 2023-09-12
+
+## Fixes
+
+- Fix pagination offset calculation
+
 ## [1.2.2] Flexysearch - 2023-09-12
 
 ## Added
