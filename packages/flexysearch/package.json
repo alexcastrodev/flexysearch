@@ -1,6 +1,6 @@
 {
   "name": "flexysearch",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "source": "src/index.ts",
   "main": "src/index.js",
   "module": "src/index.esm.js",
