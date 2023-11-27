@@ -6,6 +6,12 @@ sidebar_position: 3
 
 ## [Unreleased]
 
+## [1.2.4]
+
+### Changes
+
+- Expose typings
+
 ## [1.2.3]
 
 ### Changes
