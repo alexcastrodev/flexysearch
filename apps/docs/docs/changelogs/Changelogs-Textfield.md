@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## [Unreleased]
 
-## [1.3.0]
+## [1.2.2]
 
 ### Added
 

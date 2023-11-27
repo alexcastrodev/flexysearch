@@ -18,7 +18,7 @@
     "publish:flexysearch:production": "npm run build:flexysearch && cd dist/packages/flexysearch && npm publish --registry https://registry.npmjs.org/",
     "publish:react:dev": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry http://localhost:4873",
     "publish:react:production": "npm run build:react && cd dist/packages/flexysearch-react && npm publish --registry https://registry.npmjs.org/",
-    "publish:textfield:production": "npm run build:react-accounting-textfield && cd dist/packages/react-accounting-textfield && npm publish --registry https://registry.npmjs.org/",
+    "publish:textfield:production": "npm run build:textfield && cd dist/packages/react-accounting-textfield && npm publish --registry https://registry.npmjs.org/",
     "test:ci": "npm run test:flexysearch && npm run test:react",
     "deploy": "npm run build:docs && npx gh-pages -d apps/docs/build"
   },
