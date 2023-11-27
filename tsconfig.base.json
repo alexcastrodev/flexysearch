@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "flexysearch-react": ["packages/flexysearch-react/src/index.ts"]
+      "flexysearch-react": ["packages/flexysearch-react/src/index.ts"],
+      "react-accounting-textfield": ["packages/react-accounting-textfield/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

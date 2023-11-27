@@ -1,38 +1,17 @@
-Welcome to Flexysearch! Flexysearch is a simple and customizable search library that allows you to search for strings, numbers, and dates in tables. It's easy to use, and it provides a beautiful React hook that implements Flexysearch, saving you time and energy.
+# Introduction
 
-# Get Stated
+This monorepo contains some of my npm packages.
 
-Only node or only engine
+It's hard to maintain multiple packages in different repositories, so I decided to create a monorepo to maintain all my packages.
 
-React hook
+In near future, I want to transfer all my packages to a organization, but for now, I will maintain them here.
 
-```bash
-npm i flexysearch-react
-```
+## Packages
 
-Only engine ( just if you dont want the react hook )
+- [Flexysearch](./packages/flexysearch/README.md)
+- [Flexysearch React](./packages/flexysearch-react/README.md)
+- [React Accounting Textfield](./packages/react-accounting-textfield/README.md)
 
-```bash
-npm i flexysearch
-```
+## Documentation
 
-# Documentation
-
-For more detailed documentation on how to use Flexysearch, please visit our <a target="_blank" href="https://alexcastrodev.github.io/flexysearch">documentation website</a>. It provides a comprehensive guide on how to install, configure, and use Flexysearch to its full potential.
-
-Support and Community
-We have a <a href="https://discord.gg/t3vYGUuK6P">Discord group</a> dedicated to Flexysearch where you can connect with other developers and get support when you need it.
-
-# Why Flexysearch?
-
-We created Flexysearch because we were looking for a simple solution for table searching that could handle strings, numbers, and dates. We couldn't find an existing solution that met our needs, so we decided to create our own.
-
-# Contributing
-
-We welcome contributions from the community! If you want to contribute to Flexysearch, please start by checking our issues or creating a new one. Then, fork the project and submit a pull request to the dev branch.
-
-We appreciate it if you could include unit tests for any code changes you submit.
-
-# License
-
-Flexysearch is licensed under the MIT License. See the LICENSE file for more information.
+- [Docs](https://alexcastrodev.github.io/flexysearch/docs/packages/react-accounting-textfield/)

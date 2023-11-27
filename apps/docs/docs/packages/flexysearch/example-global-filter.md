@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import TableWithGlobalFilter from '../../examples/TableWithGlobalFilter'
+import TableWithGlobalFilter from '../../../examples/TableWithGlobalFilter'
 
 # Global filter
 

@@ -1,15 +1,16 @@
 {
-  "name": "flexysearch-react",
-  "version": "1.0.0",
-  "main": "./src/index.ts",
+  "name": "react-accounting-textfield",
+  "version": "1.2.2",
+  "main": "./src/index.tsx",
   "dependencies": {
-    "flexysearch": "1.0.0"
+    "clsx": "^1.2.1",
+    "accounting": "^0.4.1"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
-  "description": "A package for tables searching flexibly with  React",
+  "description": "A React component for currency textfield",
   "author": {
     "name": "alexandro castro",
     "email": "alexoliveira7x@gmail.com"

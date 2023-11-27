@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-import TableWithGlobalFilter from '../../examples/TableWithSSRdata'
+import TableWithGlobalFilter from '../../../examples/TableWithSSRdata'
 
 # SSR Data
 
