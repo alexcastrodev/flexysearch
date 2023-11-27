@@ -25,7 +25,7 @@
         "outputPath": "dist/packages/react-accounting-textfield",
         "tsConfig": "packages/react-accounting-textfield/tsconfig.lib.json",
         "project": "packages/react-accounting-textfield/package.json",
-        "entryFile": "packages/react-accounting-textfield/src/index.tsx",
+        "entryFile": "packages/react-accounting-textfield/index.ts",
         "external": [
           "react/jsx-runtime"
         ],

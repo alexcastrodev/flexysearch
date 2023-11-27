@@ -6,6 +6,22 @@ sidebar_position: 3
 
 ## [Unreleased]
 
+
+## [1.2.9]
+## [1.2.8]
+## [1.2.7]
+## [1.2.6]
+
+### Changes
+
+- Fix types from require import (NextJS)
+
+## [1.2.5]
+
+### Changes
+
+- Change code to index.tsx
+
 ## [1.2.4]
 
 ### Changes
