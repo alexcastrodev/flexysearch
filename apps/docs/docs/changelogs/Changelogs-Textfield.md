@@ -6,6 +6,12 @@ sidebar_position: 3
 
 ## [Unreleased]
 
+## [1.2.3]
+
+### Changes
+
+- remove accounting from dependency
+
 ## [1.2.2]
 
 ### Added
