@@ -6,6 +6,16 @@ sidebar_position: 3
 
 ## [Unreleased]
 
+## [1.2.10]
+
+### Added
+
+- Gulp for tasks
+- Add padDecimal to utils
+
+### Changes
+
+- Improving testing of precision
 
 ## [1.2.9]
 ## [1.2.8]
