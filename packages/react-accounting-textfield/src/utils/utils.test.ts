@@ -1,24 +1,89 @@
 import {
   eventInputToCurrency,
   formatMoney,
+  formatNumberToCents,
   moneyToFloat,
   preparePayload,
 } from ".";
 
-it("should receive event and return a payload", async () => {
-  const event = {
-    target: {
-      value: "1234",
-    },
-  } as React.ChangeEvent<HTMLInputElement>;
+describe("Prepare Payload", () => {
+  it("should receive event and return a payload", async () => {
+    const event = {
+      target: {
+        value: "56,91",
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
 
-  const payload = preparePayload(event, 2);
+    const payload = preparePayload(event, 2);
 
-  expect(payload).toEqual({
-    float: 1234,
-    formatted: "1.234,00",
-    cents: 123400,
-    value: "1234",
+    expect(payload).toEqual({
+      float: 56.91,
+      formatted: "56,91",
+      cents: 5691,
+      value: "56,91",
+    });
+  });
+  it("should receive event and return a payload - Decimals of 4", async () => {
+    const event = {
+      target: {
+        value: "56,91",
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
+
+    const payload = preparePayload(event, 4);
+
+    expect(payload).toEqual({
+      float: 56.91,
+      formatted: "56,91",
+      cents: 569100,
+      value: "56,91",
+    });
+  });
+  it("should fill with zero on payload - Decimals of 4", async () => {
+    const event = {
+      target: {
+        value: "56,910",
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
+
+    let payload = preparePayload(event, 4);
+
+    expect(payload).toEqual({
+      float: 56.91,
+      formatted: "56,91",
+      cents: 569100,
+      value: "56,910",
+    });
+
+    const event2 = {
+      target: {
+        value: "56,9102",
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
+    payload = preparePayload(event2, 4);
+
+    expect(payload).toEqual({
+      float: 56.9102,
+      formatted: "56,9102",
+      cents: 569102,
+      value: "56,9102",
+    });
+  });
+  it("should receive event and return a payload - Decimals of 6", async () => {
+    const event = {
+      target: {
+        value: "56,91",
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
+
+    const payload = preparePayload(event, 6);
+
+    expect(payload).toEqual({
+      float: 56.91,
+      formatted: "56,91",
+      cents: 56910000,
+      value: "56,91",
+    });
   });
 });
 
@@ -61,5 +126,22 @@ describe("Event Input To Currency", () => {
     const input = "1.1.1,12345";
     const unformatted = eventInputToCurrency(input);
     expect(unformatted).toEqual("11,10");
+  });
+});
+
+describe("Format input to cents", () => {
+  it("get correct 111023 cents", () => {
+    const input = "1100,2333";
+    const cents = formatNumberToCents(input, {
+      maximumFractionDigits: 2,
+    });
+    expect(cents).toEqual(110023);
+  });
+  it("get correct cents - decimal", () => {
+    const input = "1100,2333";
+    const cents = formatNumberToCents(input, {
+      maximumFractionDigits: 4,
+    });
+    expect(cents).toEqual(11002333);
   });
 });

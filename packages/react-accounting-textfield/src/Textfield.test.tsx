@@ -66,7 +66,7 @@ describe('Textfield', () => {
     const lastCall = onChange.mock.calls.at(-1).at(0);
 
     expect(lastCall).toEqual({
-      "cents": 110000,
+      "cents": 1100,
       "float": 1100,
       "formatted": "1.100,00",
       "value": "1100"

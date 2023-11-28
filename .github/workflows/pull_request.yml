@@ -29,9 +29,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Build flexysearch
-        run: npm run build:flexysearch
-      - name: Build flexysearch-react
-        run: npm run build:react
-      - name: Run eslint and jest
-        run: npm run test:ci
+      - name: install gulp
+        run: yarn global add gulp-cli
+      - name: Run test
+        run: gulp testCI

@@ -1,6 +1,3 @@
-export type * from '../types'
-export * from './utils'
-
 import React from 'react'
 import { ChangeCurrencyEventProps, IInputProps } from '../types'
 import { CurrencyInputControlled } from './components/Controlled'
@@ -9,6 +6,9 @@ import { EuroSignIcon } from './assets/icons/euro'
 import classnames from 'clsx'
 import { ExclamationCircleIcon } from './assets/icons/exclamationCircle'
 import { formatMoney, moneyToFloat, eventInputToCurrency, preparePayload } from './utils'
+
+export type * from '../types'
+export * from './utils'
 
 export const CurrencyInput: React.FC<IInputProps> = ({
   inputProps,
@@ -88,7 +88,7 @@ export const CurrencyInput: React.FC<IInputProps> = ({
   const handleBlur = React.useCallback(
     (event: React.FocusEvent<HTMLInputElement>) => {
       if (!inputValue) return
-      let localValue = eventInputToCurrency(inputValue)
+      const localValue = eventInputToCurrency(inputValue)
       setInputValue(localValue)
 
       inputProps?.onBlur && inputProps.onBlur(event)

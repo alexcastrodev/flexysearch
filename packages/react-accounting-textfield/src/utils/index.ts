@@ -25,7 +25,7 @@ export const preparePayload = (
   const props = {
     float: floatValue,
     formatted: parsedValue,
-    cents: formatNumberToCents(floatValue, {
+    cents: formatNumberToCents(value, {
       maximumFractionDigits,
     }),
     value: newValue,
@@ -63,17 +63,53 @@ export function formatMoney(
   return t.format(value);
 }
 
-// Function to format a number as currency and get the value in cents
+export function padDecimal(input: string, padLength: number): string {
+  // Split the input into integer and decimal parts
+  const [integerPart, decimalPart] = input.split(",");
+  if (!decimalPart) {
+    return input;
+  }
+
+  // Pad the decimal part with zeros up to the specified length
+  const paddedDecimal = decimalPart.padEnd(padLength, "0").slice(0, padLength);
+
+  // Combine the integer and padded decimal parts
+  const result = `${integerPart},${paddedDecimal}`;
+
+  return result;
+}
+
 export function formatNumberToCents(
-  data: number,
+  data: string,
   options: Intl.NumberFormatOptions,
 ) {
-  const formattedCurrency = formatMoney(data, options);
-  const numberWithoutFormatting = formattedCurrency.replace(/[.,]/g, "");
+  const maximumFractionDigits = options.maximumFractionDigits ?? 2;
+  const currentInput = padDecimal(data, maximumFractionDigits);
+
+  const numberWithoutFormatting = currentInput.replace(/[.,]/g, "");
+
   const amountInCents = parseInt(numberWithoutFormatting, 10);
 
   return amountInCents;
 }
+
+// Function to format a number as currency and get the value in cents
+// export function formatNumberToCents(
+//   data: number,
+//   options: Intl.NumberFormatOptions,
+// ) {
+//   const formattedCurrency = formatMoney(data, options);
+//   const numberWithoutFormatting = formattedCurrency.replace(/[.,]/g, "");
+//   console.log(
+//     "🚀 ~ file: index.ts:72 ~ formattedCurrency:",
+//     data,
+//     numberWithoutFormatting,
+//     options,
+//   );
+//   const amountInCents = parseInt(numberWithoutFormatting, 10);
+
+//   return amountInCents;
+// }
 
 /**
  * Converts an input value to a currency format.
