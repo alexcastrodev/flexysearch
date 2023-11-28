@@ -144,4 +144,15 @@ describe("Format input to cents", () => {
     });
     expect(cents).toEqual(11002333);
   });
+  it("get correct cents - small values", () => {
+    const input = "20";
+    const cents = formatNumberToCents(input, {
+      maximumFractionDigits: 2,
+    });
+    const cents2 = formatNumberToCents(input, {
+      maximumFractionDigits: 4,
+    });
+    expect(cents).toEqual(2000);
+    expect(cents2).toEqual(200000);
+  });
 });

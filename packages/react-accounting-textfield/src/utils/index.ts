@@ -64,10 +64,12 @@ export function formatMoney(
 }
 
 export function padDecimal(input: string, padLength: number): string {
+  let currentInput = input;
   // Split the input into integer and decimal parts
-  const [integerPart, decimalPart] = input.split(",");
+  let [integerPart, decimalPart] = input.split(",");
   if (!decimalPart) {
-    return input;
+    currentInput = `${currentInput},00`;
+    decimalPart = "00";
   }
 
   // Pad the decimal part with zeros up to the specified length

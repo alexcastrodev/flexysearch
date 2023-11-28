@@ -8,6 +8,12 @@ sidebar_position: 3
 
 ## [1.2.10]
 
+### Changes
+
+- pad when number are too small
+
+## [1.2.10]
+
 ### Added
 
 - Gulp for tasks
