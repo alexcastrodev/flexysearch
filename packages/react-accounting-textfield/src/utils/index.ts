@@ -79,6 +79,13 @@ export function padDecimal(input: string, padLength: number): string {
   return result;
 }
 
+/**
+ * Formats a number string to cents.
+ *
+ * @param data - The number string to format.
+ * @param options - The options for formatting the number.
+ * @returns The number formatted as cents.
+ */
 export function formatNumberToCents(
   data: string,
   options: Intl.NumberFormatOptions,
@@ -92,24 +99,6 @@ export function formatNumberToCents(
 
   return amountInCents;
 }
-
-// Function to format a number as currency and get the value in cents
-// export function formatNumberToCents(
-//   data: number,
-//   options: Intl.NumberFormatOptions,
-// ) {
-//   const formattedCurrency = formatMoney(data, options);
-//   const numberWithoutFormatting = formattedCurrency.replace(/[.,]/g, "");
-//   console.log(
-//     "🚀 ~ file: index.ts:72 ~ formattedCurrency:",
-//     data,
-//     numberWithoutFormatting,
-//     options,
-//   );
-//   const amountInCents = parseInt(numberWithoutFormatting, 10);
-
-//   return amountInCents;
-// }
 
 /**
  * Converts an input value to a currency format.
