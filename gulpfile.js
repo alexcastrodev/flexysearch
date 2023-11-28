@@ -28,4 +28,33 @@ function testing(cb) {
   })
 }
 
-exports.testCI = parallel(testing)
+
+function buildAll(cb) {
+  exec('yarn build:flexysearch', (err, stdout) => {
+    if(err) {
+      console.error(err)
+      return
+    }
+    console.log(stdout)
+    cb()
+  })
+  exec('yarn build:react', (err, stdout) => {
+    if(err) {
+      console.error(err)
+      return
+    }
+    console.log(stdout)
+    cb()
+  })
+  exec('yarn build:textfield', (err, stdout) => {
+    if(err) {
+      console.error(err)
+      return
+    }
+    console.log(stdout)
+    cb()
+  })
+}
+
+
+exports.testCI = parallel(testing, buildAll)
