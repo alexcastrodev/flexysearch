@@ -2,7 +2,7 @@ repo_name: AlexcastroDev/flexysearch
 report_id: 539a18dfa3bb0b9dd2dec0678c1548f8
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-02T14:18:27+00:00'
+timestamp: '2024-01-05T08:11:45+00:00'
 requested_by: AlexcastroDev
 provider: github
 branch: main
@@ -16,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch
   detection_source: Repo Metadata
 - name: TypeScript
   description: A superset of JavaScript that compiles to clean JavaScript output
@@ -36,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch
   detection_source: Repo Metadata
 - name: Node.js
   description: A platform built on Chrome's JavaScript runtime for easily building
@@ -46,6 +49,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch/blob/main/package.json
   detection_source: package.json
   last_updated_by: Alexandro
   last_updated_on: 2022-07-08 18:07:51.000000000 Z
@@ -86,6 +90,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch/blob/main/package.json
   detection_source: package.json
   last_updated_by: Alexandro
   last_updated_on: 2022-07-08 18:07:51.000000000 Z
@@ -97,6 +102,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch
   detection_source: Repo Metadata
 - name: GitHub Actions
   description: Automate your workflow from idea to production
@@ -106,6 +112,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch/blob/main/.github/workflows/pull_request.yml
   detection_source: ".github/workflows/pull_request.yml"
   last_updated_by: dependabot[bot]
   last_updated_on: 2023-11-28 13:06:40.000000000 Z
@@ -145,6 +152,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch/blob/main/apps/docs/yarn.lock
   detection_source: apps/docs/yarn.lock
   last_updated_by: Alexandro Castro
   last_updated_on: 2023-03-21 02:18:59.000000000 Z
@@ -170,6 +178,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/AlexcastroDev/flexysearch/blob/main/package.json
   detection_source: package.json
   last_updated_by: Alexandro
   last_updated_on: 2022-07-08 18:07:51.000000000 Z
