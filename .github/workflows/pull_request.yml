@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '16.14.0'
       - name: Load Yarn cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
