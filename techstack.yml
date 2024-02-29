@@ -2,7 +2,7 @@ repo_name: AlexcastroDev/flexysearch
 report_id: 539a18dfa3bb0b9dd2dec0678c1548f8
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:11:45+00:00'
+timestamp: '2024-02-29T19:22:58+00:00'
 requested_by: AlexcastroDev
 provider: github
 branch: main
@@ -131,7 +131,7 @@ tools:
   last_updated_by: Alexandro
   last_updated_on: 2022-07-08 18:07:51.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.8.8
   license: MIT
